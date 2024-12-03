@@ -30,7 +30,7 @@ public class BloodAnalysisController {
     }
 
     @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
-    @GetMapping("/user/{tc}/bookings")
+    @GetMapping("/user/{tc}/analysis")
     public List<BloodAnalysis> findBloodAnalysisByUser(@PathVariable String tc) {
         User user = userService.validateAndGetUserByTc(tc);
         return bloodAnalysisService.findBloodAnalysisByUser(user);

@@ -42,7 +42,7 @@ public class ValueRangeServiceImpl implements ValueRangesService{
                     existingValue.setMinValue(value.getMinValue());
                     existingValue.setValueName(value.getValueName());
                     existingValue.setMaxMonth(value.getMaxMonth());
-                    existingValue.setMinValue(value.getMinValue());
+                    existingValue.setMinMonth(value.getMinMonth());
 
                     return valueRangesRepository.save(existingValue);
                 })
