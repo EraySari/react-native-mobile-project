@@ -1,5 +1,6 @@
 package com.analysis.project.config;
 
+import com.analysis.project.enums.RoleType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -34,10 +35,10 @@ public class WebSecurityConfig {
          */
         return http
                 .authorizeHttpRequests(authorizeHttpRequests -> authorizeHttpRequests
-                        .requestMatchers(HttpMethod.GET, "/api/cabins", "/api/cabins/**").hasAnyAuthority(ADMIN, USER)
-                        .requestMatchers(HttpMethod.GET, "/api/users/me").hasAnyAuthority(ADMIN, USER)
-                        .requestMatchers("/api/cabins", "/api/cabins/**").hasAuthority(ADMIN)
-                        .requestMatchers("/api/users", "/api/users/**").hasAuthority(ADMIN)
+                        //.requestMatchers(HttpMethod.GET, "/api/cabins", "/api/cabins/**").hasAnyAuthority(ADMIN, USER)
+                        .requestMatchers(HttpMethod.GET, "/api/users/me").hasAnyAuthority(RoleType.ADMIN.toString(), RoleType.USER.toString())
+//                        .requestMatchers("/api/cabins", "/api/cabins/**").hasAuthority(ADMIN)
+                        .requestMatchers("/api/users", "/api/users/**").hasAuthority(RoleType.ADMIN.toString())
                         .requestMatchers("/auth/**").permitAll()
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .requestMatchers("/", "/error", "/csrf", "/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs", "/v3/api-docs/**").permitAll()
@@ -72,6 +73,4 @@ public class WebSecurityConfig {
         return source;
     }
 
-    public static final String ADMIN = "ADMIN";
-    public static final String USER = "USER";
 }

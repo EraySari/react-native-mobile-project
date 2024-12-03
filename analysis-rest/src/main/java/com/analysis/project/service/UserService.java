@@ -11,11 +11,15 @@ public interface UserService {
 
     Optional<User> getUserByTc(String tc);
 
+    Optional<User> getUserByNameAndSurname(String name,String surname);
+
     boolean hasUserWithTc(String tc);
 
     boolean hasUserWithEmail(String email);
 
     User validateAndGetUserByTc(String tc);
+
+    User validateAndGetUserByNameAndSurname(String name, String surname);
 
     User saveUser(User user);
 

@@ -1,5 +1,8 @@
 package com.analysis.project.service;
 
+import com.analysis.project.handler.NameAndSurnameNotFoundException;
+import com.analysis.project.handler.PermissionLoginException;
+import com.analysis.project.handler.UserNotFoundException;
 import com.analysis.project.model.User;
 import com.analysis.project.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +26,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Optional<User> getUserByTc(String tc) {
-        return Optional.ofNullable(userRepository.findByTc(tc).orElseThrow(() -> new RuntimeException(tc)));
+        return Optional.ofNullable(userRepository.findByTc(tc).orElseThrow(() -> new UserNotFoundException(tc)));
+    }
+
+    @Override
+    public Optional<User> getUserByNameAndSurname(String name,String surname) {
+        return Optional.ofNullable(userRepository.findByNameAndSurname(name,surname).orElseThrow(() -> new NameAndSurnameNotFoundException(name+" "+surname +" Not Found")));
     }
 
     @Override
@@ -39,7 +47,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public User validateAndGetUserByTc(String tc) {
         return getUserByTc(tc)
-                .orElseThrow(() -> new RuntimeException(tc));
+                .orElseThrow(() -> new UserNotFoundException(tc));
+    }
+
+    @Override
+    public User validateAndGetUserByNameAndSurname(String name, String surname) {
+        return getUserByNameAndSurname(name,surname).orElseThrow(() -> new NameAndSurnameNotFoundException(name+" "+surname+" not found"));
     }
 
     @Override
@@ -51,15 +64,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteUser(User user) {
         if (!hasUserWithTc(user.getTc())) {
-            throw new RuntimeException(user.getTc());
+            throw new UserNotFoundException(user.getTc());
         }
         userRepository.delete(user);
     }
 
     @Override
     public Optional<User> validTcAndPassword(String tc, String password) {
-        return getUserByTc(tc)
-                .filter(user -> passwordEncoder.matches(password, user.getPassword()));
+        return Optional.ofNullable(getUserByTc(tc)
+                .filter(user -> passwordEncoder.matches(password, user.getPassword())).orElseThrow(() -> new PermissionLoginException("Tc or Password Wrong")));
 
     }
 }

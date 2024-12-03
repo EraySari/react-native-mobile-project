@@ -1,5 +1,6 @@
 package com.analysis.project.service;
 
+import com.analysis.project.handler.BloodAnalysisNotFoundException;
 import com.analysis.project.model.BloodAnalysis;
 import com.analysis.project.model.User;
 import com.analysis.project.repository.BloodAnalysisRepository;
@@ -27,7 +28,7 @@ public class BloodAnalysisServiceImpl implements BloodAnalysisService {
 
     @Override
     public Optional<BloodAnalysis> findByBloodAnalysisId(Long id) {
-        return bloodAnalysisRepository.findById(id);
+        return Optional.ofNullable(bloodAnalysisRepository.findById(id).orElseThrow(() -> new BloodAnalysisNotFoundException("Not Found Analysis With " + id)));
     }
 
     @Override
@@ -51,11 +52,14 @@ public class BloodAnalysisServiceImpl implements BloodAnalysisService {
 
                     return bloodAnalysisRepository.save(existingAnalysis);
                 })
-                .orElseThrow(() -> new RuntimeException("Not found analysis"));
+                .orElseThrow(() -> new BloodAnalysisNotFoundException("Not Found Analysis"));
     }
 
     @Override
     public void delete(Long id) {
+        if (!bloodAnalysisRepository.existsById(id)) {
+            throw new BloodAnalysisNotFoundException("Not Found Analysis");
+        }
         bloodAnalysisRepository.deleteById(id);
     }
 }

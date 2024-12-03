@@ -29,10 +29,10 @@ public class BloodAnalysisController {
         return bloodAnalysisService.findAllBloodAnalysis();
     }
 
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
-    @GetMapping("/user/{tc}/analysis")
-    public List<BloodAnalysis> findBloodAnalysisByUser(@PathVariable String tc) {
-        User user = userService.validateAndGetUserByTc(tc);
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    @GetMapping("/user/{name}/{surname}/analysis")
+    public List<BloodAnalysis> findBloodAnalysisByUser(@PathVariable String name,@PathVariable String surname) {
+        User user = userService.validateAndGetUserByNameAndSurname(name,surname);
         return bloodAnalysisService.findBloodAnalysisByUser(user);
     }
 

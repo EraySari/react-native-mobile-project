@@ -31,7 +31,7 @@ public class ValueRangesController {
         return valueRangesService.findValueRangesByMonth(month);
     }
 
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/{id}")
     public Optional<ValueRanges> findValueRangeById(@PathVariable Long id) {

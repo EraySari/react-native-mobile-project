@@ -1,5 +1,6 @@
 package com.analysis.project.service;
 
+import com.analysis.project.handler.ValueRangeNotFoundException;
 import com.analysis.project.model.ValueRanges;
 import com.analysis.project.repository.ValueRangesRepository;
 import lombok.RequiredArgsConstructor;
@@ -26,7 +27,7 @@ public class ValueRangeServiceImpl implements ValueRangesService{
 
     @Override
     public Optional<ValueRanges> findByValueRangeId(Long id) {
-        return valueRangesRepository.findById(id);
+        return Optional.ofNullable(valueRangesRepository.findById(id).orElseThrow(() -> new ValueRangeNotFoundException("Value Not Found With "+id)));
     }
 
     @Override
@@ -46,12 +47,15 @@ public class ValueRangeServiceImpl implements ValueRangesService{
 
                     return valueRangesRepository.save(existingValue);
                 })
-                .orElseThrow(() -> new RuntimeException("Not found analysis"));
+                .orElseThrow(() -> new ValueRangeNotFoundException("Not Found Value Range"));
     }
 
     @Override
     public void delete(Long id) {
 
+        if (!valueRangesRepository.existsById(id)) {
+            throw new ValueRangeNotFoundException("Not Found Value Range");
+        }
         valueRangesRepository.deleteById(id);
     }
 }
