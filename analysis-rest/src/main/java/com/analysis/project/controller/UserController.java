@@ -26,6 +26,24 @@ public class UserController {
     }
 
     @ResponseStatus(HttpStatus.OK)
+    @PutMapping("/updateMe")
+    public User updateMe(@AuthenticationPrincipal CustomUserDetails currentUser, @RequestBody User updatedUser) {
+        // Kullanıcıyı mevcut kimlik doğrulama bilgilerinden al
+        User existingUser = userService.validateAndGetUserByTc(currentUser.getUsername());
+
+        // Mevcut kullanıcı bilgilerini güncelle
+        existingUser.setName(updatedUser.getName());
+        existingUser.setSurname(updatedUser.getSurname());
+        existingUser.setEmail(updatedUser.getEmail());
+        existingUser.setMonth(updatedUser.getMonth());
+        existingUser.setGender(updatedUser.getGender());
+        // Diğer alanlar için de set metodlarını ekleyebilirsiniz
+
+        // Güncellenmiş kullanıcıyı kaydet
+        return userService.saveUser(existingUser);
+    }
+
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping
     public List<User> getUsers() {
         return userService.getUsers();

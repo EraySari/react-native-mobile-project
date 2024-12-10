@@ -37,6 +37,7 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests(authorizeHttpRequests -> authorizeHttpRequests
                         //.requestMatchers(HttpMethod.GET, "/api/cabins", "/api/cabins/**").hasAnyAuthority(ADMIN, USER)
                         .requestMatchers(HttpMethod.GET, "/api/users/me").hasAnyAuthority(RoleType.ADMIN.toString(), RoleType.USER.toString())
+                        .requestMatchers(HttpMethod.PUT, "/api/users/updateMe").hasAnyAuthority(RoleType.ADMIN.toString(), RoleType.USER.toString())
 //                        .requestMatchers("/api/cabins", "/api/cabins/**").hasAuthority(ADMIN)
                         .requestMatchers("/api/users", "/api/users/**").hasAuthority(RoleType.ADMIN.toString())
                         .requestMatchers("/auth/**").permitAll()
