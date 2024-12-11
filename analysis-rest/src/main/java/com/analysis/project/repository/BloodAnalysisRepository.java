@@ -12,4 +12,7 @@ public interface BloodAnalysisRepository extends JpaRepository<BloodAnalysis, Lo
 
     List<BloodAnalysis> findBloodAnalysisByUser(User user);
 
+
+    List<BloodAnalysis> findByUser(User user);
 }
+

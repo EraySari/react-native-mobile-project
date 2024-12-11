@@ -3,7 +3,9 @@ package com.analysis.project.service;
 import com.analysis.project.handler.NameAndSurnameNotFoundException;
 import com.analysis.project.handler.PermissionLoginException;
 import com.analysis.project.handler.UserNotFoundException;
+import com.analysis.project.model.BloodAnalysis;
 import com.analysis.project.model.User;
+import com.analysis.project.repository.BloodAnalysisRepository;
 import com.analysis.project.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -17,6 +19,7 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
+    private final BloodAnalysisRepository bloodAnalysisRepository;
     private final PasswordEncoder passwordEncoder;
 
     @Override
@@ -66,6 +69,8 @@ public class UserServiceImpl implements UserService {
         if (!hasUserWithTc(user.getTc())) {
             throw new UserNotFoundException(user.getTc());
         }
+        List<BloodAnalysis> analyses = bloodAnalysisRepository.findByUser(user);
+        bloodAnalysisRepository.deleteAll(analyses);
         userRepository.delete(user);
     }
 
