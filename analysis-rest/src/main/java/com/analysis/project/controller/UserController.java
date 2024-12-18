@@ -7,6 +7,8 @@ import com.analysis.project.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,6 +20,7 @@ public class UserController {
 
     private final UserService userService;
     private final BloodAnalysisServiceImpl bloodAnalysisService;
+    private final PasswordEncoder passwordEncoder;
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/me")
@@ -28,18 +31,14 @@ public class UserController {
     @ResponseStatus(HttpStatus.OK)
     @PutMapping("/updateMe")
     public User updateMe(@AuthenticationPrincipal CustomUserDetails currentUser, @RequestBody User updatedUser) {
-        // Kullanıcıyı mevcut kimlik doğrulama bilgilerinden al
         User existingUser = userService.validateAndGetUserByTc(currentUser.getUsername());
 
-        // Mevcut kullanıcı bilgilerini güncelle
         existingUser.setName(updatedUser.getName());
         existingUser.setSurname(updatedUser.getSurname());
+        existingUser.setPassword(updatedUser.getPassword());
         existingUser.setEmail(updatedUser.getEmail());
-        existingUser.setMonth(updatedUser.getMonth());
         existingUser.setGender(updatedUser.getGender());
-        // Diğer alanlar için de set metodlarını ekleyebilirsiniz
 
-        // Güncellenmiş kullanıcıyı kaydet
         return userService.saveUser(existingUser);
     }
 

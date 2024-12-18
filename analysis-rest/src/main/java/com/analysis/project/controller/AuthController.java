@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
 import java.util.Optional;
 
 @RequiredArgsConstructor
@@ -28,8 +29,8 @@ public class AuthController {
     private record LoginRequest(String tc, String password) {
     }
 
-    private record SignUpRequest(String tc, String surname, String password, String name, String email, Integer month,
-                                 GenderType gender) {
+    private record SignUpRequest(String tc, String surname, String password, String name, String email,
+                                 LocalDate birthDate, GenderType gender) {
     }
 
     private final UserService userService;
@@ -66,7 +67,7 @@ public class AuthController {
         user.setName(signUpRequest.name);
         user.setSurname(signUpRequest.surname);
         user.setEmail(signUpRequest.email);
-        user.setMonth(signUpRequest.month);
+        user.setBirthDate(signUpRequest.birthDate);
         user.setGender(signUpRequest.gender);
         user.setRole(RoleType.USER);
         return user;
