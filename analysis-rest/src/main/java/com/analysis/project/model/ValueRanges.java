@@ -1,6 +1,6 @@
 package com.analysis.project.model;
 
-import com.analysis.project.enums.GuideType;
+import com.analysis.project.enums.CalculateType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,19 +21,22 @@ public class ValueRanges {
     private Integer minMonth;
     private Integer maxMonth;
 
+    private String guideType;
+
     @Enumerated(EnumType.STRING)
-    private GuideType guideType;
+    private CalculateType calculateType;
 
     private String valueName;
 
     private Double minValue;
     private Double maxValue;
 
-    public ValueRanges(Integer minMonth, Integer maxMonth, GuideType guideType,String valueName, Double minValue, Double maxValue) {
+    public ValueRanges(Integer minMonth, Integer maxMonth, String guideType,CalculateType calculateType, String valueName, Double minValue, Double maxValue) {
         this.minMonth = minMonth;
         this.maxMonth = maxMonth;
         this.valueName = valueName;
         this.guideType = guideType;
+        this.calculateType = calculateType;
         this.minValue = minValue;
         this.maxValue = maxValue;
     }

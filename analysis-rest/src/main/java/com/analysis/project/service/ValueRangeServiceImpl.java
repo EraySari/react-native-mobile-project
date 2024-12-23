@@ -42,6 +42,7 @@ public class ValueRangeServiceImpl implements ValueRangesService{
                     existingValue.setMaxValue(value.getMaxValue());
                     existingValue.setMinValue(value.getMinValue());
                     existingValue.setGuideType(value.getGuideType());
+                    existingValue.setCalculateType(value.getCalculateType());
                     existingValue.setValueName(value.getValueName());
                     existingValue.setMaxMonth(value.getMaxMonth());
                     existingValue.setMinMonth(value.getMinMonth());
