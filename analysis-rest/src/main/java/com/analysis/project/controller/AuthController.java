@@ -9,6 +9,7 @@ import com.analysis.project.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -44,6 +45,15 @@ public class AuthController {
             return ResponseEntity.ok(new AuthResponse(user.getId(), user.getName(),user.getSurname(),user.getMonth(),user.getGender(), user.getRole().toString()));
         }
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+    }
+
+    @PostMapping("/logout")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public ResponseEntity<Void> logout() {
+
+        SecurityContextHolder.clearContext();
+
+        return ResponseEntity.noContent().build();
     }
 
     @ResponseStatus(HttpStatus.CREATED)

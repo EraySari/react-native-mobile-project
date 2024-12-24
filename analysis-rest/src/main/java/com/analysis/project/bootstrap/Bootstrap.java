@@ -133,8 +133,81 @@ public class Bootstrap implements CommandLineRunner {
 
 
 
-                    //TODO: cilv
 
+
+                    //TODO: cilv valuetype düzelt
+
+                    new ValueRanges(0, 0, "cilv", CalculateType.CI95, "IgG", 700.0, 1300.0),
+                    new ValueRanges(1, 3, "cilv", CalculateType.CI95, "IgG", 280.0, 750.0),
+                    new ValueRanges(4, 6, "cilv", CalculateType.CI95, "IgG", 200.0, 1200.0),
+                    new ValueRanges(7, 12, "cilv", CalculateType.CI95, "IgG", 300.0, 1500.0),
+                    new ValueRanges(13, 35, "cilv", CalculateType.CI95, "IgG", 400.0, 1300.0),
+                    new ValueRanges(36, 71, "cilv", CalculateType.CI95, "IgG", 600.0, 1500.0),
+                    new ValueRanges(72, 1800, "cilv", CalculateType.CI95, "IgG", 639.0, 1344.0),
+
+                    new ValueRanges(0, 0, "cilv", CalculateType.CI95, "IgM", 5.0, 30.0),
+                    new ValueRanges(1, 3, "cilv", CalculateType.CI95, "IgM", 15.0, 70.0),
+                    new ValueRanges(4, 6, "cilv", CalculateType.CI95, "IgM", 10.0, 90.0),
+                    new ValueRanges(7, 12, "cilv", CalculateType.CI95, "IgM", 25.0, 115.0),
+                    new ValueRanges(13, 35, "cilv", CalculateType.CI95, "IgM", 30.0, 120.0),
+                    new ValueRanges(36, 71, "cilv", CalculateType.CI95, "IgM", 22.0, 100.0),
+                    new ValueRanges(72, 1800, "cilv", CalculateType.CI95, "IgM", 56.0, 352.0),
+
+                    new ValueRanges(0, 0, "cilv", CalculateType.CI95, "IgA", 0.0, 11.0),
+                    new ValueRanges(1, 3, "cilv", CalculateType.CI95, "IgA", 6.0, 50.0),
+                    new ValueRanges(4, 6, "cilv", CalculateType.CI95, "IgA", 8.0, 90.0),
+                    new ValueRanges(7, 12, "cilv", CalculateType.CI95, "IgA", 16.0, 100.0),
+                    new ValueRanges(13, 35, "cilv", CalculateType.CI95, "IgA", 20.0, 230.0),
+                    new ValueRanges(36, 71, "cilv", CalculateType.CI95, "IgA", 50.0, 150.0),
+                    new ValueRanges(72, 1800, "cilv", CalculateType.CI95, "IgA", 70.0, 312.0),
+
+                    new ValueRanges(0, 2, "cilv", CalculateType.CI95, "IgG1", 218.0, 496.0),
+                    new ValueRanges(3, 5, "cilv", CalculateType.CI95, "IgG1", 143.0, 394.0),
+                    new ValueRanges(6, 8, "cilv", CalculateType.CI95, "IgG1", 190.0, 388.0),
+                    new ValueRanges(9, 23, "cilv", CalculateType.CI95, "IgG1", 286.0, 680.0),
+                    new ValueRanges(24, 47, "cilv", CalculateType.CI95, "IgG1", 381.0, 884.0),
+                    new ValueRanges(48, 71, "cilv", CalculateType.CI95, "IgG1", 292.0, 816.0),
+                    new ValueRanges(72, 95, "cilv", CalculateType.CI95, "IgG1", 422.0, 802.0),
+                    new ValueRanges(96, 119, "cilv", CalculateType.CI95, "IgG1", 456.0, 938.0),
+                    new ValueRanges(120, 143, "cilv", CalculateType.CI95, "IgG1", 456.0, 952.0),
+                    new ValueRanges(144, 167, "cilv", CalculateType.CI95, "IgG1", 347.0, 993.0),
+                    new ValueRanges(168, 1800, "cilv", CalculateType.CI95, "IgG1", 422.0, 1292.0),
+
+                    new ValueRanges(0, 2, "cilv", CalculateType.CI95, "IgG2", 40.0, 167.0),
+                    new ValueRanges(3, 5, "cilv", CalculateType.CI95, "IgG2", 23.0, 147.0),
+                    new ValueRanges(6, 8, "cilv", CalculateType.CI95, "IgG2", 37.0, 60.0),
+                    new ValueRanges(9, 23, "cilv", CalculateType.CI95, "IgG2", 30.0, 327.0),
+                    new ValueRanges(24, 47, "cilv", CalculateType.CI95, "IgG2", 70.0, 443.0),
+                    new ValueRanges(48, 71, "cilv", CalculateType.CI95, "IgG2", 83.0, 513.0),
+                    new ValueRanges(72, 95, "cilv", CalculateType.CI95, "IgG2", 113.0, 480.0),
+                    new ValueRanges(96, 119, "cilv", CalculateType.CI95, "IgG2", 163.0, 513.0),
+                    new ValueRanges(120, 143, "cilv", CalculateType.CI95, "IgG2", 147.0, 493.0),
+                    new ValueRanges(144, 167, "cilv", CalculateType.CI95, "IgG2", 140.0, 440.0),
+                    new ValueRanges(168, 1800, "cilv", CalculateType.CI95, "IgG2", 117.0, 747.0),
+
+                    new ValueRanges(0, 2, "cilv", CalculateType.CI95, "IgG3", 4.0, 23.0),
+                    new ValueRanges(3, 5, "cilv", CalculateType.CI95, "IgG3", 4.0, 100.0),
+                    new ValueRanges(6, 8, "cilv", CalculateType.CI95, "IgG3", 12.0, 62.0),
+                    new ValueRanges(9, 23, "cilv", CalculateType.CI95, "IgG3", 13.0, 82.0),
+                    new ValueRanges(24, 47, "cilv", CalculateType.CI95, "IgG3", 17.0, 90.0),
+                    new ValueRanges(48, 71, "cilv", CalculateType.CI95, "IgG3", 8.0, 111.0),
+                    new ValueRanges(72, 95, "cilv", CalculateType.CI95, "IgG3", 15.0, 133.0),
+                    new ValueRanges(96, 119, "cilv", CalculateType.CI95, "IgG3", 26.0, 113.0),
+                    new ValueRanges(120, 143, "cilv", CalculateType.CI95, "IgG3", 12.0, 179.0),
+                    new ValueRanges(144, 167, "cilv", CalculateType.CI95, "IgG3", 23.0, 117.0),
+                    new ValueRanges(168, 1800, "cilv", CalculateType.CI95, "IgG3", 41.0, 129.0),
+
+                    new ValueRanges(0, 2, "cilv", CalculateType.CI95, "IgG4", 1.0, 120.0),
+                    new ValueRanges(3, 5, "cilv", CalculateType.CI95, "IgG4", 1.0, 120.0),
+                    new ValueRanges(6, 8, "cilv", CalculateType.CI95, "IgG4", 1.0, 120.0),
+                    new ValueRanges(9, 23, "cilv", CalculateType.CI95, "IgG4", 1.0, 120.0),
+                    new ValueRanges(24, 47, "cilv", CalculateType.CI95, "IgG4", 1.0, 120.0),
+                    new ValueRanges(48, 71, "cilv", CalculateType.CI95, "IgG4", 2.0, 112.0),
+                    new ValueRanges(72, 95, "cilv", CalculateType.CI95, "IgG4", 1.0, 138.0),
+                    new ValueRanges(96, 119, "cilv", CalculateType.CI95, "IgG4", 1.0, 95.0),
+                    new ValueRanges(120, 143, "cilv", CalculateType.CI95, "IgG4", 1.0, 153.0),
+                    new ValueRanges(144, 167, "cilv", CalculateType.CI95, "IgG4", 1.0, 143.0),
+                    new ValueRanges(168, 1800, "cilv", CalculateType.CI95, "IgG4", 10.0, 67.0),
 
 
 
