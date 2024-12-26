@@ -56,7 +56,7 @@ public class Bootstrap implements CommandLineRunner {
                     new ValueRanges(120, 155, "ap", CalculateType.CI95, "IgG", 503.0, 1580.0),
                     new ValueRanges(156, 191, "ap", CalculateType.CI95, "IgG", 509.0, 1580.0),
                     new ValueRanges(192, 215, "ap", CalculateType.CI95, "IgG", 487.0, 1327.0),
-                    new ValueRanges(216, 1800, "ap", CalculateType.CI95, "IgG", 767.0, 1590.0),
+                    new ValueRanges(216, Integer.MAX_VALUE, "ap", CalculateType.CI95, "IgG", 767.0, 1590.0),
 
                     new ValueRanges(0, 4, "ap", CalculateType.CI95, "IgG1", 56.0, 215.0),
                     new ValueRanges(5, 8, "ap", CalculateType.CI95, "IgG1", 102.0, 369.0),
@@ -68,7 +68,7 @@ public class Bootstrap implements CommandLineRunner {
                     new ValueRanges(120, 155, "ap", CalculateType.CI95, "IgG1", 280.0, 1030.0),
                     new ValueRanges(156, 191, "ap", CalculateType.CI95, "IgG1", 289.0, 934.0),
                     new ValueRanges(192, 215, "ap", CalculateType.CI95, "IgG1", 283.0, 772.0),
-                    new ValueRanges(216, 1800, "ap", CalculateType.CI95, "IgG1", 341.0, 894.0),
+                    new ValueRanges(216, Integer.MAX_VALUE, "ap", CalculateType.CI95, "IgG1", 341.0, 894.0),
 
                     new ValueRanges(0, 4, "ap", CalculateType.CI95, "IgG2", 0.0, 82.0),
                     new ValueRanges(5, 8, "ap", CalculateType.CI95, "IgG2", 0.0, 89.0),
@@ -80,7 +80,7 @@ public class Bootstrap implements CommandLineRunner {
                     new ValueRanges(120, 155, "ap", CalculateType.CI95, "IgG2", 66.0, 502.0),
                     new ValueRanges(156, 191, "ap", CalculateType.CI95, "IgG2", 82.0, 516.0),
                     new ValueRanges(192, 215, "ap", CalculateType.CI95, "IgG2", 98.0, 486.0),
-                    new ValueRanges(216, 1800, "ap", CalculateType.CI95, "IgG2", 171.0, 632.0),
+                    new ValueRanges(216, Integer.MAX_VALUE, "ap", CalculateType.CI95, "IgG2", 171.0, 632.0),
 
                     new ValueRanges(0, 4, "ap", CalculateType.CI95, "IgG3", 7.0, 823.0),
                     new ValueRanges(5, 8, "ap", CalculateType.CI95, "IgG3", 11.9, 74.0),
@@ -92,7 +92,7 @@ public class Bootstrap implements CommandLineRunner {
                     new ValueRanges(120, 155, "ap", CalculateType.CI95, "IgG3", 11.5, 53.0),
                     new ValueRanges(156, 191, "ap", CalculateType.CI95, "IgG3", 20.0, 103.2),
                     new ValueRanges(192, 215, "ap", CalculateType.CI95, "IgG3", 31.3, 97.6),
-                    new ValueRanges(216, 1800, "ap", CalculateType.CI95, "IgG3", 18.4, 106.0),
+                    new ValueRanges(216, Integer.MAX_VALUE, "ap", CalculateType.CI95, "IgG3", 18.4, 106.0),
 
                     new ValueRanges(0, 4, "ap", CalculateType.CI95, "IgG4", 0.0, 19.8),
                     new ValueRanges(5, 8, "ap", CalculateType.CI95, "IgG4", 0.0, 20.8),
@@ -104,7 +104,7 @@ public class Bootstrap implements CommandLineRunner {
                     new ValueRanges(120, 155, "ap", CalculateType.CI95, "IgG4", 16.0, 50.0),
                     new ValueRanges(156, 191, "ap", CalculateType.CI95, "IgG4", 22.0, 48.0),
                     new ValueRanges(192, 215, "ap", CalculateType.CI95, "IgG4", 27.0, 55.0),
-                    new ValueRanges(216, 1800, "ap", CalculateType.CI95, "IgG4", 36.0, 60.0),
+                    new ValueRanges(216, Integer.MAX_VALUE, "ap", CalculateType.CI95, "IgG4", 36.0, 60.0),
 
                     new ValueRanges(0, 4, "ap", CalculateType.CI95, "IgM", 26.0, 122.0),
                     new ValueRanges(5, 8, "ap", CalculateType.CI95, "IgM", 32.0, 132.0),
@@ -116,7 +116,7 @@ public class Bootstrap implements CommandLineRunner {
                     new ValueRanges(120, 155, "ap", CalculateType.CI95, "IgM", 41.0, 255.0),
                     new ValueRanges(156, 191, "ap", CalculateType.CI95, "IgM", 45.0, 244.0),
                     new ValueRanges(192, 215, "ap", CalculateType.CI95, "IgM", 49.0, 201.0),
-                    new ValueRanges(216, 1800, "ap", CalculateType.CI95, "IgM", 37.0, 286.0),
+                    new ValueRanges(216, Integer.MAX_VALUE, "ap", CalculateType.CI95, "IgM", 37.0, 286.0),
 
                     new ValueRanges(0, 4, "ap", CalculateType.CI95, "IgA", 7.0, 37.0),
                     new ValueRanges(5, 8, "ap", CalculateType.CI95, "IgA", 16.0, 50.0),
@@ -128,7 +128,7 @@ public class Bootstrap implements CommandLineRunner {
                     new ValueRanges(120, 155, "ap", CalculateType.CI95, "IgA", 42.0, 295.0),
                     new ValueRanges(156, 191, "ap", CalculateType.CI95, "IgA", 52.0, 319.0),
                     new ValueRanges(192, 215, "ap", CalculateType.CI95, "IgA", 60.0, 337.0),
-                    new ValueRanges(216, 1800, "ap", CalculateType.CI95, "IgA", 61.0, 356.0),
+                    new ValueRanges(216, Integer.MAX_VALUE, "ap", CalculateType.CI95, "IgA", 61.0, 356.0),
 
 
 
@@ -143,7 +143,7 @@ public class Bootstrap implements CommandLineRunner {
                     new ValueRanges(7, 12, "cilv", CalculateType.CI95, "IgG", 300.0, 1500.0),
                     new ValueRanges(13, 35, "cilv", CalculateType.CI95, "IgG", 400.0, 1300.0),
                     new ValueRanges(36, 71, "cilv", CalculateType.CI95, "IgG", 600.0, 1500.0),
-                    new ValueRanges(72, 1800, "cilv", CalculateType.CI95, "IgG", 639.0, 1344.0),
+                    new ValueRanges(72, Integer.MAX_VALUE, "cilv", CalculateType.CI95, "IgG", 639.0, 1344.0),
 
                     new ValueRanges(0, 0, "cilv", CalculateType.CI95, "IgM", 5.0, 30.0),
                     new ValueRanges(1, 3, "cilv", CalculateType.CI95, "IgM", 15.0, 70.0),
@@ -151,7 +151,7 @@ public class Bootstrap implements CommandLineRunner {
                     new ValueRanges(7, 12, "cilv", CalculateType.CI95, "IgM", 25.0, 115.0),
                     new ValueRanges(13, 35, "cilv", CalculateType.CI95, "IgM", 30.0, 120.0),
                     new ValueRanges(36, 71, "cilv", CalculateType.CI95, "IgM", 22.0, 100.0),
-                    new ValueRanges(72, 1800, "cilv", CalculateType.CI95, "IgM", 56.0, 352.0),
+                    new ValueRanges(72, Integer.MAX_VALUE, "cilv", CalculateType.CI95, "IgM", 56.0, 352.0),
 
                     new ValueRanges(0, 0, "cilv", CalculateType.CI95, "IgA", 0.0, 11.0),
                     new ValueRanges(1, 3, "cilv", CalculateType.CI95, "IgA", 6.0, 50.0),
@@ -159,7 +159,7 @@ public class Bootstrap implements CommandLineRunner {
                     new ValueRanges(7, 12, "cilv", CalculateType.CI95, "IgA", 16.0, 100.0),
                     new ValueRanges(13, 35, "cilv", CalculateType.CI95, "IgA", 20.0, 230.0),
                     new ValueRanges(36, 71, "cilv", CalculateType.CI95, "IgA", 50.0, 150.0),
-                    new ValueRanges(72, 1800, "cilv", CalculateType.CI95, "IgA", 70.0, 312.0),
+                    new ValueRanges(72, Integer.MAX_VALUE, "cilv", CalculateType.CI95, "IgA", 70.0, 312.0),
 
                     new ValueRanges(0, 2, "cilv", CalculateType.CI95, "IgG1", 218.0, 496.0),
                     new ValueRanges(3, 5, "cilv", CalculateType.CI95, "IgG1", 143.0, 394.0),
@@ -171,7 +171,7 @@ public class Bootstrap implements CommandLineRunner {
                     new ValueRanges(96, 119, "cilv", CalculateType.CI95, "IgG1", 456.0, 938.0),
                     new ValueRanges(120, 143, "cilv", CalculateType.CI95, "IgG1", 456.0, 952.0),
                     new ValueRanges(144, 167, "cilv", CalculateType.CI95, "IgG1", 347.0, 993.0),
-                    new ValueRanges(168, 1800, "cilv", CalculateType.CI95, "IgG1", 422.0, 1292.0),
+                    new ValueRanges(168, Integer.MAX_VALUE, "cilv", CalculateType.CI95, "IgG1", 422.0, 1292.0),
 
                     new ValueRanges(0, 2, "cilv", CalculateType.CI95, "IgG2", 40.0, 167.0),
                     new ValueRanges(3, 5, "cilv", CalculateType.CI95, "IgG2", 23.0, 147.0),
@@ -183,7 +183,7 @@ public class Bootstrap implements CommandLineRunner {
                     new ValueRanges(96, 119, "cilv", CalculateType.CI95, "IgG2", 163.0, 513.0),
                     new ValueRanges(120, 143, "cilv", CalculateType.CI95, "IgG2", 147.0, 493.0),
                     new ValueRanges(144, 167, "cilv", CalculateType.CI95, "IgG2", 140.0, 440.0),
-                    new ValueRanges(168, 1800, "cilv", CalculateType.CI95, "IgG2", 117.0, 747.0),
+                    new ValueRanges(168, Integer.MAX_VALUE, "cilv", CalculateType.CI95, "IgG2", 117.0, 747.0),
 
                     new ValueRanges(0, 2, "cilv", CalculateType.CI95, "IgG3", 4.0, 23.0),
                     new ValueRanges(3, 5, "cilv", CalculateType.CI95, "IgG3", 4.0, 100.0),
@@ -195,7 +195,7 @@ public class Bootstrap implements CommandLineRunner {
                     new ValueRanges(96, 119, "cilv", CalculateType.CI95, "IgG3", 26.0, 113.0),
                     new ValueRanges(120, 143, "cilv", CalculateType.CI95, "IgG3", 12.0, 179.0),
                     new ValueRanges(144, 167, "cilv", CalculateType.CI95, "IgG3", 23.0, 117.0),
-                    new ValueRanges(168, 1800, "cilv", CalculateType.CI95, "IgG3", 41.0, 129.0),
+                    new ValueRanges(168, Integer.MAX_VALUE, "cilv", CalculateType.CI95, "IgG3", 41.0, 129.0),
 
                     new ValueRanges(0, 2, "cilv", CalculateType.CI95, "IgG4", 1.0, 120.0),
                     new ValueRanges(3, 5, "cilv", CalculateType.CI95, "IgG4", 1.0, 120.0),
@@ -207,7 +207,7 @@ public class Bootstrap implements CommandLineRunner {
                     new ValueRanges(96, 119, "cilv", CalculateType.CI95, "IgG4", 1.0, 95.0),
                     new ValueRanges(120, 143, "cilv", CalculateType.CI95, "IgG4", 1.0, 153.0),
                     new ValueRanges(144, 167, "cilv", CalculateType.CI95, "IgG4", 1.0, 143.0),
-                    new ValueRanges(168, 1800, "cilv", CalculateType.CI95, "IgG4", 10.0, 67.0),
+                    new ValueRanges(168, Integer.MAX_VALUE, "cilv", CalculateType.CI95, "IgG4", 10.0, 67.0),
 
 
 
@@ -219,7 +219,412 @@ public class Bootstrap implements CommandLineRunner {
 
 
 
-                    //TODO: tjp
+                    //TODO: tjp G2 G3 G4 geo,full month fix
+
+                    //IgG
+                    new ValueRanges(0, 0, "tjp", CalculateType.GEOMETRIC, "IgG", 653.8, 1114.6),
+                    new ValueRanges(0, 0, "tjp", CalculateType.MINMAX, "IgG", 492.0, 1190.0),
+                    new ValueRanges(0, 0, "tjp", CalculateType.CI95, "IgG", 792.0, 1037.5),
+
+                    new ValueRanges(1, 5, "tjp", CalculateType.GEOMETRIC, "IgG", 280.7, 667.0),
+                    new ValueRanges(1, 5, "tjp", CalculateType.MINMAX, "IgG", 270.0, 792.0),
+                    new ValueRanges(1, 5, "tjp", CalculateType.CI95, "IgG", 384.2, 629.7),
+
+                    new ValueRanges(6, 8, "tjp", CalculateType.GEOMETRIC, "IgG", 374.0, 789.8),
+                    new ValueRanges(6, 8, "tjp", CalculateType.MINMAX, "IgG", 268.0, 898.0),
+                    new ValueRanges(6, 8, "tjp", CalculateType.CI95, "IgG", 515.6, 722.4),
+
+                    new ValueRanges(9, 12, "tjp", CalculateType.GEOMETRIC, "IgG", 511.6, 873.8),
+                    new ValueRanges(9, 12, "tjp", CalculateType.MINMAX, "IgG", 421.0, 1100.0),
+                    new ValueRanges(9, 12, "tjp", CalculateType.CI95, "IgG", 641.9, 788.2),
+
+                    new ValueRanges(13, 24, "tjp", CalculateType.GEOMETRIC, "IgG", 574.7, 974.1),
+                    new ValueRanges(13, 24, "tjp", CalculateType.MINMAX, "IgG", 365.0, 1200.0),
+                    new ValueRanges(13, 24, "tjp", CalculateType.CI95, "IgG", 748.2, 851.4),
+
+                    new ValueRanges(25, 36, "tjp", CalculateType.GEOMETRIC, "IgG", 613.9, 1030.7),
+                    new ValueRanges(25, 36, "tjp", CalculateType.MINMAX, "IgG", 430.0, 1290.0),
+                    new ValueRanges(25, 36, "tjp", CalculateType.CI95, "IgG", 790.4, 906.4),
+
+                    new ValueRanges(37, 48, "tjp", CalculateType.GEOMETRIC, "IgG", 722.7, 1037.1),
+                    new ValueRanges(37, 48, "tjp", CalculateType.MINMAX, "IgG", 539.0, 1200.0),
+                    new ValueRanges(37, 48, "tjp", CalculateType.CI95, "IgG", 844.1, 944.6),
+
+                    new ValueRanges(49, 72, "tjp", CalculateType.GEOMETRIC, "IgG", 776.6, 1195.8),
+                    new ValueRanges(49, 72, "tjp", CalculateType.MINMAX, "IgG", 528.0, 1490.0),
+                    new ValueRanges(49, 72, "tjp", CalculateType.CI95, "IgG", 958.5, 1058.5),
+
+                    new ValueRanges(7, 8, "tjp", CalculateType.GEOMETRIC, "IgG", 837.5, 1243.9),
+                    new ValueRanges(7, 8, "tjp", CalculateType.MINMAX, "IgG", 527.0, 1590.0),
+                    new ValueRanges(7, 8, "tjp", CalculateType.CI95, "IgG", 1011.5, 1111.4),
+
+                    new ValueRanges(9, 10, "tjp", CalculateType.GEOMETRIC, "IgG", 824.0, 1301.6),
+                    new ValueRanges(9, 10, "tjp", CalculateType.MINMAX, "IgG", 646.0, 1620.0),
+                    new ValueRanges(9, 10, "tjp", CalculateType.CI95, "IgG", 1024.9, 1151.7),
+
+                    new ValueRanges(11, 12, "tjp", CalculateType.GEOMETRIC, "IgG", 822.8, 1280.6),
+                    new ValueRanges(11, 12, "tjp", CalculateType.MINMAX, "IgG", 579.0, 1610.0),
+                    new ValueRanges(11, 12, "tjp", CalculateType.CI95, "IgG", 995.9, 1155.6),
+
+                    new ValueRanges(13, 14, "tjp", CalculateType.GEOMETRIC, "IgG", 851.8, 1323.8),
+                    new ValueRanges(13, 14, "tjp", CalculateType.MINMAX, "IgG", 741.0, 1650.0),
+                    new ValueRanges(13, 14, "tjp", CalculateType.CI95, "IgG", 1014.2, 1209.0),
+
+                    new ValueRanges(15, 16, "tjp", CalculateType.GEOMETRIC, "IgG", 773.4, 1188.8),
+                    new ValueRanges(15, 16, "tjp", CalculateType.MINMAX, "IgG", 666.0, 1370.0),
+                    new ValueRanges(15, 16, "tjp", CalculateType.CI95, "IgG", 895.3, 1108.9),
+
+                    new ValueRanges(17, Integer.MAX_VALUE, "tjp", CalculateType.GEOMETRIC, "IgG", 944.7, 1505.1),
+                    new ValueRanges(17, Integer.MAX_VALUE, "tjp", CalculateType.MINMAX, "IgG", 830.0, 1820.0),
+                    new ValueRanges(17, Integer.MAX_VALUE, "tjp", CalculateType.CI95, "IgG", 1109.9, 1398.0),
+
+
+                    //IgA
+                    new ValueRanges(0, 0, "tjp", CalculateType.GEOMETRIC, "IgA", 5.5, 5.9),
+                    new ValueRanges(0, 0, "tjp", CalculateType.MINMAX, "IgA", 5.0, 5.8),
+                    new ValueRanges(0, 0, "tjp", CalculateType.CI95, "IgA", 5.6, 5.9),
+
+                    new ValueRanges(1, 5, "tjp", CalculateType.GEOMETRIC, "IgA", 0.5, 39.9),
+                    new ValueRanges(1, 5, "tjp", CalculateType.MINMAX, "IgA", 5.8, 58.0),
+                    new ValueRanges(1, 5, "tjp", CalculateType.CI95, "IgA", 15.8, 40.9),
+
+                    new ValueRanges(6, 8, "tjp", CalculateType.GEOMETRIC, "IgA", -2.0, 48.4),
+                    new ValueRanges(6, 8, "tjp", CalculateType.MINMAX, "IgA", 5.8, 85.8),
+                    new ValueRanges(6, 8, "tjp", CalculateType.CI95, "IgA", 20.5, 48.5),
+
+                    new ValueRanges(9, 12, "tjp", CalculateType.GEOMETRIC, "IgA", 16.2, 89.6),
+                    new ValueRanges(9, 12, "tjp", CalculateType.MINMAX, "IgA", 18.4, 154.0),
+                    new ValueRanges(9, 12, "tjp", CalculateType.CI95, "IgA", 47.2, 76.9),
+
+                    new ValueRanges(13, 24, "tjp", CalculateType.GEOMETRIC, "IgA", 25.8, 62.4),
+                    new ValueRanges(13, 24, "tjp", CalculateType.MINMAX, "IgA", 11.5, 94.3),
+                    new ValueRanges(13, 24, "tjp", CalculateType.CI95, "IgA", 42.9, 52.6),
+
+                    new ValueRanges(25, 36, "tjp", CalculateType.GEOMETRIC, "IgA", 26.7, 80.3),
+                    new ValueRanges(25, 36, "tjp", CalculateType.MINMAX, "IgA", 23.0, 130.0),
+                    new ValueRanges(25, 36, "tjp", CalculateType.CI95, "IgA", 51.4, 66.3),
+
+                    new ValueRanges(37, 48, "tjp", CalculateType.GEOMETRIC, "IgA", 46.6, 91.0),
+                    new ValueRanges(37, 48, "tjp", CalculateType.MINMAX, "IgA", 40.7, 115.0),
+                    new ValueRanges(37, 48, "tjp", CalculateType.CI95, "IgA", 64.8, 79.2),
+
+                    new ValueRanges(49, 72, "tjp", CalculateType.GEOMETRIC, "IgA", 54.5, 129.3),
+                    new ValueRanges(49, 72, "tjp", CalculateType.MINMAX, "IgA", 23.0, 205.1),
+                    new ValueRanges(49, 72, "tjp", CalculateType.CI95, "IgA", 90.2, 108.3),
+
+                    new ValueRanges(7, 8, "tjp", CalculateType.GEOMETRIC, "IgA", 66.1, 150.7),
+                    new ValueRanges(7, 8, "tjp", CalculateType.MINMAX, "IgA", 36.1, 268.0),
+                    new ValueRanges(7, 8, "tjp", CalculateType.CI95, "IgA", 105.9, 127.0),
+
+                    new ValueRanges(9, 10, "tjp", CalculateType.GEOMETRIC, "IgA", 70.8, 162.6),
+                    new ValueRanges(9, 10, "tjp", CalculateType.MINMAX, "IgA", 54.0, 268.0),
+                    new ValueRanges(9, 10, "tjp", CalculateType.CI95, "IgA", 111.8, 137.0),
+
+                    new ValueRanges(11, 12, "tjp", CalculateType.GEOMETRIC, "IgA", 72.8, 158.8),
+                    new ValueRanges(11, 12, "tjp", CalculateType.MINMAX, "IgA", 27.0, 198.0),
+                    new ValueRanges(11, 12, "tjp", CalculateType.CI95, "IgA", 109.7, 141.3),
+
+                    new ValueRanges(13, 14, "tjp", CalculateType.GEOMETRIC, "IgA", 83.1, 177.9),
+                    new ValueRanges(13, 14, "tjp", CalculateType.MINMAX, "IgA", 52.4, 225.0),
+                    new ValueRanges(13, 14, "tjp", CalculateType.CI95, "IgA", 118.0, 159.0),
+
+                    new ValueRanges(15, 16, "tjp", CalculateType.GEOMETRIC, "IgA", 80.4, 139.2),
+                    new ValueRanges(15, 16, "tjp", CalculateType.MINMAX, "IgA", 48.0, 158.0),
+                    new ValueRanges(15, 16, "tjp", CalculateType.CI95, "IgA", 97.8, 130.3),
+
+                    new ValueRanges(17, Integer.MAX_VALUE, "tjp", CalculateType.GEOMETRIC, "IgA", 65.8, 177.1),
+                    new ValueRanges(17, Integer.MAX_VALUE, "tjp", CalculateType.MINMAX, "IgA", 46.5, 221.0),
+                    new ValueRanges(17, Integer.MAX_VALUE, "tjp", CalculateType.CI95, "IgA", 102.4, 163.8),
+
+                    //IgM
+                    new ValueRanges(0, 0, "tjp", CalculateType.GEOMETRIC, "IgM", 15.0, 22.0),
+                    new ValueRanges(0, 0, "tjp", CalculateType.MINMAX, "IgM", 17.3, 29.6),
+                    new ValueRanges(0, 0, "tjp", CalculateType.CI95, "IgM", 16.7, 20.7),
+
+                    new ValueRanges(1, 5, "tjp", CalculateType.GEOMETRIC, "IgM", 19.9, 94.7),
+                    new ValueRanges(1, 5, "tjp", CalculateType.MINMAX, "IgM", 18.4, 145.0),
+                    new ValueRanges(1, 5, "tjp", CalculateType.CI95, "IgM", 41.9, 92.1),
+
+                    new ValueRanges(6, 8, "tjp", CalculateType.GEOMETRIC, "IgM", 29.8, 107.6),
+                    new ValueRanges(6, 8, "tjp", CalculateType.MINMAX, "IgM", 26.4, 146.0),
+                    new ValueRanges(6, 8, "tjp", CalculateType.CI95, "IgM", 58.5, 98.5),
+
+                    new ValueRanges(9, 12, "tjp", CalculateType.GEOMETRIC, "IgM", 45.8, 126.4),
+                    new ValueRanges(9, 12, "tjp", CalculateType.MINMAX, "IgM", 23.5, 180.0),
+                    new ValueRanges(9, 12, "tjp", CalculateType.CI95, "IgM", 78.9, 110.8),
+
+                    new ValueRanges(13, 24, "tjp", CalculateType.GEOMETRIC, "IgM", 58.0, 138.6),
+                    new ValueRanges(13, 24, "tjp", CalculateType.MINMAX, "IgM", 25.6, 201.0),
+                    new ValueRanges(13, 24, "tjp", CalculateType.CI95, "IgM", 96.3, 117.7),
+
+                    new ValueRanges(25, 36, "tjp", CalculateType.GEOMETRIC, "IgM", 58.6, 126.4),
+                    new ValueRanges(25, 36, "tjp", CalculateType.MINMAX, "IgM", 36.0, 199.0),
+                    new ValueRanges(25, 36, "tjp", CalculateType.CI95, "IgM", 89.0, 107.7),
+
+                    new ValueRanges(37, 48, "tjp", CalculateType.GEOMETRIC, "IgM", 50.8, 121.4),
+                    new ValueRanges(37, 48, "tjp", CalculateType.MINMAX, "IgM", 26.1, 188.0),
+                    new ValueRanges(37, 48, "tjp", CalculateType.CI95, "IgM", 80.9, 104.0),
+
+                    new ValueRanges(49, 72, "tjp", CalculateType.GEOMETRIC, "IgM", 65.0, 146.6),
+                    new ValueRanges(49, 72, "tjp", CalculateType.MINMAX, "IgM", 33.3, 207.0),
+                    new ValueRanges(49, 72, "tjp", CalculateType.CI95, "IgM", 103.7, 123.3),
+
+                    new ValueRanges(7, 8, "tjp", CalculateType.GEOMETRIC, "IgM", 54.7, 140.5),
+                    new ValueRanges(7, 8, "tjp", CalculateType.MINMAX, "IgM", 30.5, 220.0),
+                    new ValueRanges(7, 8, "tjp", CalculateType.CI95, "IgM", 95.5, 116.8),
+
+                    new ValueRanges(9, 10, "tjp", CalculateType.GEOMETRIC, "IgM", 44.6, 143.2),
+                    new ValueRanges(9, 10, "tjp", CalculateType.MINMAX, "IgM", 33.7, 257.0),
+                    new ValueRanges(9, 10, "tjp", CalculateType.CI95, "IgM", 90.8, 118.0),
+
+                    new ValueRanges(11, 12, "tjp", CalculateType.GEOMETRIC, "IgM", 63.6, 141.2),
+                    new ValueRanges(11, 12, "tjp", CalculateType.MINMAX, "IgM", 30.0, 187.0),
+                    new ValueRanges(11, 12, "tjp", CalculateType.CI95, "IgM", 96.0, 124.0),
+
+                    new ValueRanges(13, 14, "tjp", CalculateType.GEOMETRIC, "IgM", 77.1, 164.7),
+                    new ValueRanges(13, 14, "tjp", CalculateType.MINMAX, "IgM", 44.0, 206.0),
+                    new ValueRanges(13, 14, "tjp", CalculateType.CI95, "IgM", 110.3, 147.3),
+
+                    new ValueRanges(15, 16, "tjp", CalculateType.GEOMETRIC, "IgM", 50.0, 149.4),
+                    new ValueRanges(15, 16, "tjp", CalculateType.MINMAX, "IgM", 33.0, 205.0),
+                    new ValueRanges(15, 16, "tjp", CalculateType.CI95, "IgM", 83.7, 138.8),
+
+                    new ValueRanges(17, Integer.MAX_VALUE, "tjp", CalculateType.GEOMETRIC, "IgM", 86.4, 175.4),
+                    new ValueRanges(17, Integer.MAX_VALUE, "tjp", CalculateType.MINMAX, "IgM", 75.0, 198.5),
+                    new ValueRanges(17, Integer.MAX_VALUE, "tjp", CalculateType.CI95, "IgM", 114.6, 161.9),
+
+                    //IgG1
+                    new ValueRanges(0, 0, "tjp", CalculateType.GEOMETRIC, "IgG1", 523.0, 827.0),
+                    new ValueRanges(0, 0, "tjp", CalculateType.MINMAX, "IgG1", 430.0, 897.0),
+                    new ValueRanges(0, 0, "tjp", CalculateType.CI95, "IgG1", 611.0, 773.0),
+
+                    new ValueRanges(1, 5, "tjp", CalculateType.GEOMETRIC, "IgG1", 206.0, 432.0),
+                    new ValueRanges(1, 5, "tjp", CalculateType.MINMAX, "IgG1", 160.0, 574.0),
+                    new ValueRanges(1, 5, "tjp", CalculateType.CI95, "IgG1", 261.0, 413.0),
+
+                    new ValueRanges(6, 8, "tjp", CalculateType.GEOMETRIC, "IgG1", 297.0, 673.0),
+                    new ValueRanges(6, 8, "tjp", CalculateType.MINMAX, "IgG1", 279.0, 820.0),
+                    new ValueRanges(6, 8, "tjp", CalculateType.CI95, "IgG1", 408.0, 625.0),
+
+                    new ValueRanges(9, 12, "tjp", CalculateType.GEOMETRIC, "IgG1", 322.0, 802.0),
+                    new ValueRanges(9, 12, "tjp", CalculateType.MINMAX, "IgG1", 328.0, 1250.0),
+                    new ValueRanges(9, 12, "tjp", CalculateType.CI95, "IgG1", 506.0, 690.0),
+
+                    new ValueRanges(13, 24, "tjp", CalculateType.GEOMETRIC, "IgG1", 429.0, 1013.0),
+                    new ValueRanges(13, 24, "tjp", CalculateType.MINMAX, "IgG1", 344.0, 1435.0),
+                    new ValueRanges(13, 24, "tjp", CalculateType.CI95, "IgG1", 702.0, 844.0),
+
+                    new ValueRanges(25, 36, "tjp", CalculateType.GEOMETRIC, "IgG1", 451.0, 1021.0),
+                    new ValueRanges(25, 36, "tjp", CalculateType.MINMAX, "IgG1", 340.0, 1470.0),
+                    new ValueRanges(25, 36, "tjp", CalculateType.CI95, "IgG1", 712.0, 860.0),
+
+                    new ValueRanges(37, 48, "tjp", CalculateType.GEOMETRIC, "IgG1", 516.0, 1008.0),
+                    new ValueRanges(37, 48, "tjp", CalculateType.MINMAX, "IgG1", 439.0, 1333.0),
+                    new ValueRanges(37, 48, "tjp", CalculateType.CI95, "IgG1", 726.0, 867.0),
+
+                    new ValueRanges(49, 72, "tjp", CalculateType.GEOMETRIC, "IgG1", 546.0, 964.0),
+                    new ValueRanges(49, 72, "tjp", CalculateType.MINMAX, "IgG1", 468.0, 1333.0),
+                    new ValueRanges(49, 72, "tjp", CalculateType.CI95, "IgG1", 726.0, 837.0),
+
+                    new ValueRanges(7, 8, "tjp", CalculateType.GEOMETRIC, "IgG1", 525.0, 1087.0),
+                    new ValueRanges(7, 8, "tjp", CalculateType.MINMAX, "IgG1", 420.0, 1470.0),
+                    new ValueRanges(7, 8, "tjp", CalculateType.CI95, "IgG1", 778.0, 920.0),
+
+                    new ValueRanges(9, 10, "tjp", CalculateType.GEOMETRIC, "IgG1", 531.0, 1189.0),
+                    new ValueRanges(9, 10, "tjp", CalculateType.MINMAX, "IgG1", 380.0, 1840.0),
+                    new ValueRanges(9, 10, "tjp", CalculateType.CI95, "IgG1", 834.0, 996.0),
+
+                    new ValueRanges(11, 12, "tjp", CalculateType.GEOMETRIC, "IgG1", 601.0, 1083.0),
+                    new ValueRanges(11, 12, "tjp", CalculateType.MINMAX, "IgG1", 599.0, 1560.0),
+                    new ValueRanges(11, 12, "tjp", CalculateType.CI95, "IgG1", 787.0, 953.0),
+
+                    new ValueRanges(13, 14, "tjp", CalculateType.GEOMETRIC, "IgG1", 518.0, 1226.0),
+                    new ValueRanges(13, 14, "tjp", CalculateType.MINMAX, "IgG1", 490.0, 1560.0),
+                    new ValueRanges(13, 14, "tjp", CalculateType.CI95, "IgG1", 805.0, 1061.0),
+
+                    new ValueRanges(15, 16, "tjp", CalculateType.GEOMETRIC, "IgG1", 527.0, 1065.0),
+                    new ValueRanges(15, 16, "tjp", CalculateType.MINMAX, "IgG1", 498.0, 1460.0),
+                    new ValueRanges(15, 16, "tjp", CalculateType.CI95, "IgG1", 711.0, 956.0),
+
+                    new ValueRanges(17, Integer.MAX_VALUE, "tjp", CalculateType.GEOMETRIC, "IgG1", 643.0, 1071.0),
+                    new ValueRanges(17, Integer.MAX_VALUE, "tjp", CalculateType.MINMAX, "IgG1", 528.0, 1384.0),
+                    new ValueRanges(17, Integer.MAX_VALUE, "tjp", CalculateType.CI95, "IgG1", 782.0, 978.0),
+
+                    //IgG2
+
+                    new ValueRanges(0, 0, "tjp", CalculateType.GEOMETRIC, "IgG2", 523.0, 827.0),
+                    new ValueRanges(0, 0, "tjp", CalculateType.MINMAX, "IgG2", 87.0, 263.0),
+                    new ValueRanges(0, 0, "tjp", CalculateType.CI95, "IgG2", 135.0, 192.0),
+
+                    new ValueRanges(1, 5, "tjp", CalculateType.GEOMETRIC, "IgG2", 206.0, 432.0),
+                    new ValueRanges(1, 5, "tjp", CalculateType.MINMAX, "IgG2", 32.0, 108.0),
+                    new ValueRanges(1, 5, "tjp", CalculateType.CI95, "IgG2", 46.0, 84.0),
+
+                    new ValueRanges(6, 8, "tjp", CalculateType.GEOMETRIC, "IgG2", 297.0, 673.0),
+                    new ValueRanges(6, 8, "tjp", CalculateType.MINMAX, "IgG2", 36.0, 146.0),
+                    new ValueRanges(6, 8, "tjp", CalculateType.CI95, "IgG2", 53.0, 97.0),
+
+                    new ValueRanges(9, 12, "tjp", CalculateType.GEOMETRIC, "IgG2", 322.0, 802.0),
+                    new ValueRanges(9, 12, "tjp", CalculateType.MINMAX, "IgG2", 25.0, 161.0),
+                    new ValueRanges(9, 12, "tjp", CalculateType.CI95, "IgG2", 58.0, 85.0),
+
+                    new ValueRanges(13, 24, "tjp", CalculateType.GEOMETRIC, "IgG2", 429.0, 1013.0),
+                    new ValueRanges(13, 24, "tjp", CalculateType.MINMAX, "IgG2", 31.0, 264.0),
+                    new ValueRanges(13, 24, "tjp", CalculateType.CI95, "IgG2", 92.0, 116.0),
+
+                    new ValueRanges(25, 36, "tjp", CalculateType.GEOMETRIC, "IgG2", 451.0, 1021.0),
+                    new ValueRanges(25, 36, "tjp", CalculateType.MINMAX, "IgG2", 43.0, 380.0),
+                    new ValueRanges(25, 36, "tjp", CalculateType.CI95, "IgG2", 112.0, 157.0),
+
+                    new ValueRanges(37, 48, "tjp", CalculateType.GEOMETRIC, "IgG2", 516.0, 1008.0),
+                    new ValueRanges(37, 48, "tjp", CalculateType.MINMAX, "IgG2", 60.0, 410.0),
+                    new ValueRanges(37, 48, "tjp", CalculateType.CI95, "IgG2", 155.0, 211.0),
+
+                    new ValueRanges(49, 72, "tjp", CalculateType.GEOMETRIC, "IgG2", 546.0, 964.0),
+                    new ValueRanges(49, 72, "tjp", CalculateType.MINMAX, "IgG2", 85.0, 440.0),
+                    new ValueRanges(49, 72, "tjp", CalculateType.CI95, "IgG2", 160.0, 204.0),
+
+                    new ValueRanges(7, 8, "tjp", CalculateType.GEOMETRIC, "IgG2", 525.0, 1087.0),
+                    new ValueRanges(7, 8, "tjp", CalculateType.MINMAX, "IgG2", 67.0, 460.0),
+                    new ValueRanges(7, 8, "tjp", CalculateType.CI95, "IgG2", 193.0, 245.0),
+
+                    new ValueRanges(9, 10, "tjp", CalculateType.GEOMETRIC, "IgG2", 531.0, 1189.0),
+                    new ValueRanges(9, 10, "tjp", CalculateType.MINMAX, "IgG2", 70.0, 543.0),
+                    new ValueRanges(9, 10, "tjp", CalculateType.CI95, "IgG2", 211.0, 273.0),
+
+                    new ValueRanges(11, 12, "tjp", CalculateType.GEOMETRIC, "IgG2", 601.0, 1083.0),
+                    new ValueRanges(11, 12, "tjp", CalculateType.MINMAX, "IgG2", 111.0, 515.0),
+                    new ValueRanges(11, 12, "tjp", CalculateType.CI95, "IgG2", 195.0, 259.0),
+
+                    new ValueRanges(13, 14, "tjp", CalculateType.GEOMETRIC, "IgG2", 518.0, 1226.0),
+                    new ValueRanges(13, 14, "tjp", CalculateType.MINMAX, "IgG2", 100.0, 573.0),
+                    new ValueRanges(13, 14, "tjp", CalculateType.CI95, "IgG2", 257.0, 361.0),
+
+                    new ValueRanges(15, 16, "tjp", CalculateType.GEOMETRIC, "IgG2", 527.0, 1065.0),
+                    new ValueRanges(15, 16, "tjp", CalculateType.MINMAX, "IgG2", 110.0, 398.0),
+                    new ValueRanges(15, 16, "tjp", CalculateType.CI95, "IgG2", 214.0, 292.0),
+
+                    new ValueRanges(17, Integer.MAX_VALUE, "tjp", CalculateType.GEOMETRIC, "IgG2", 643.0, 1071.0),
+                    new ValueRanges(17, Integer.MAX_VALUE, "tjp", CalculateType.MINMAX, "IgG2", 147.0, 610.0),
+                    new ValueRanges(17, Integer.MAX_VALUE, "tjp", CalculateType.CI95, "IgG2", 271.0, 391.0),
+
+                    //IgG3
+
+                    new ValueRanges(0, 0, "tjp", CalculateType.GEOMETRIC, "IgG3", 523.0, 827.0),
+                    new ValueRanges(0, 0, "tjp", CalculateType.MINMAX, "IgG3", 18.0, 78.0),
+                    new ValueRanges(0, 0, "tjp", CalculateType.CI95, "IgG3", 31.0, 50.0),
+
+                    new ValueRanges(1, 5, "tjp", CalculateType.GEOMETRIC, "IgG3", 206.0, 432.0),
+                    new ValueRanges(1, 5, "tjp", CalculateType.MINMAX, "IgG3", 13.0, 53.0),
+                    new ValueRanges(1, 5, "tjp", CalculateType.CI95, "IgG3", 17.0, 35.0),
+
+                    new ValueRanges(6, 8, "tjp", CalculateType.GEOMETRIC, "IgG3", 297.0, 673.0),
+                    new ValueRanges(6, 8, "tjp", CalculateType.MINMAX, "IgG3", 14.0, 100.0),
+                    new ValueRanges(6, 8, "tjp", CalculateType.CI95, "IgG3", 27.0, 56.0),
+
+                    new ValueRanges(9, 12, "tjp", CalculateType.GEOMETRIC, "IgG3", 322.0, 802.0),
+                    new ValueRanges(9, 12, "tjp", CalculateType.MINMAX, "IgG3", 18.0, 110.0),
+                    new ValueRanges(9, 12, "tjp", CalculateType.CI95, "IgG3", 34.0, 53.0),
+
+                    new ValueRanges(13, 24, "tjp", CalculateType.GEOMETRIC, "IgG3", 429.0, 1013.0),
+                    new ValueRanges(13, 24, "tjp", CalculateType.MINMAX, "IgG3", 16.0, 132.0),
+                    new ValueRanges(13, 24, "tjp", CalculateType.CI95, "IgG3", 37.0, 49.0),
+
+                    new ValueRanges(25, 36, "tjp", CalculateType.GEOMETRIC, "IgG3", 451.0, 1021.0),
+                    new ValueRanges(25, 36, "tjp", CalculateType.MINMAX, "IgG3", 14.0, 125.0),
+                    new ValueRanges(25, 36, "tjp", CalculateType.CI95, "IgG3", 30.0, 42.0),
+
+                    new ValueRanges(37, 48, "tjp", CalculateType.GEOMETRIC, "IgG3", 516.0, 1008.0),
+                    new ValueRanges(37, 48, "tjp", CalculateType.MINMAX, "IgG3", 15.0, 120.0),
+                    new ValueRanges(37, 48, "tjp", CalculateType.CI95, "IgG3", 35.0, 50.0),
+
+                    new ValueRanges(49, 72, "tjp", CalculateType.GEOMETRIC, "IgG3", 546.0, 964.0),
+                    new ValueRanges(49, 72, "tjp", CalculateType.MINMAX, "IgG3", 15.0, 107.0),
+                    new ValueRanges(49, 72, "tjp", CalculateType.CI95, "IgG3", 36.0, 47.0),
+
+                    new ValueRanges(7, 8, "tjp", CalculateType.GEOMETRIC, "IgG3", 525.0, 1087.0),
+                    new ValueRanges(7, 8, "tjp", CalculateType.MINMAX, "IgG3", 21.0, 186.0),
+                    new ValueRanges(7, 8, "tjp", CalculateType.CI95, "IgG3", 51.0, 73.0),
+
+                    new ValueRanges(9, 10, "tjp", CalculateType.GEOMETRIC, "IgG3", 531.0, 1189.0),
+                    new ValueRanges(9, 10, "tjp", CalculateType.MINMAX, "IgG3", 20.0, 186.0),
+                    new ValueRanges(9, 10, "tjp", CalculateType.CI95, "IgG3", 50.0, 67.0),
+
+                    new ValueRanges(11, 12, "tjp", CalculateType.GEOMETRIC, "IgG3", 601.0, 1083.0),
+                    new ValueRanges(11, 12, "tjp", CalculateType.MINMAX, "IgG3", 29.0, 200.0),
+                    new ValueRanges(11, 12, "tjp", CalculateType.CI95, "IgG3", 47.0, 75.0),
+
+                    new ValueRanges(13, 14, "tjp", CalculateType.GEOMETRIC, "IgG3", 518.0, 1226.0),
+                    new ValueRanges(13, 14, "tjp", CalculateType.MINMAX, "IgG3", 28.0, 223.0),
+                    new ValueRanges(13, 14, "tjp", CalculateType.CI95, "IgG3", 73.0, 117.0),
+
+                    new ValueRanges(15, 16, "tjp", CalculateType.GEOMETRIC, "IgG3", 527.0, 1065.0),
+                    new ValueRanges(15, 16, "tjp", CalculateType.MINMAX, "IgG3", 30.0, 120.0),
+                    new ValueRanges(15, 16, "tjp", CalculateType.CI95, "IgG3", 51.0, 73.0),
+
+                    new ValueRanges(17, Integer.MAX_VALUE, "tjp", CalculateType.GEOMETRIC, "IgG3", 643.0, 1071.0),
+                    new ValueRanges(17, Integer.MAX_VALUE, "tjp", CalculateType.MINMAX, "IgG3", 21.0, 152.0),
+                    new ValueRanges(17, Integer.MAX_VALUE, "tjp", CalculateType.CI95, "IgG3", 43.0, 73.0),
+
+
+                    //IgG4
+
+                    new ValueRanges(0, 0, "tjp", CalculateType.GEOMETRIC, "IgG4", 523.0, 827.0),
+                    new ValueRanges(0, 0, "tjp", CalculateType.MINMAX, "IgG4", 17.0, 81.0),
+                    new ValueRanges(0, 0, "tjp", CalculateType.CI95, "IgG4", 17.0, 36.0),
+
+                    new ValueRanges(1, 5, "tjp", CalculateType.GEOMETRIC, "IgG4", 206.0, 432.0),
+                    new ValueRanges(1, 5, "tjp", CalculateType.MINMAX, "IgG4", 2.0, 48.0),
+                    new ValueRanges(1, 5, "tjp", CalculateType.CI95, "IgG4", 10.0, 31.0),
+
+                    new ValueRanges(6, 8, "tjp", CalculateType.GEOMETRIC, "IgG4", 297.0, 673.0),
+                    new ValueRanges(6, 8, "tjp", CalculateType.MINMAX, "IgG4", 2.0, 52.0),
+                    new ValueRanges(6, 8, "tjp", CalculateType.CI95, "IgG4", 12.0, 25.0),
+
+                    new ValueRanges(9, 12, "tjp", CalculateType.GEOMETRIC, "IgG4", 322.0, 802.0),
+                    new ValueRanges(9, 12, "tjp", CalculateType.MINMAX, "IgG4", 2.0, 20.0),
+                    new ValueRanges(9, 12, "tjp", CalculateType.CI95, "IgG4", 12.0, 16.0),
+
+                    new ValueRanges(13, 24, "tjp", CalculateType.GEOMETRIC, "IgG4", 429.0, 1013.0),
+                    new ValueRanges(13, 24, "tjp", CalculateType.MINMAX, "IgG4", 2.0, 99.0),
+                    new ValueRanges(13, 24, "tjp", CalculateType.CI95, "IgG4", 18.0, 26.0),
+
+                    new ValueRanges(25, 36, "tjp", CalculateType.GEOMETRIC, "IgG4", 451.0, 1021.0),
+                    new ValueRanges(25, 36, "tjp", CalculateType.MINMAX, "IgG4", 2.0, 171.0),
+                    new ValueRanges(25, 36, "tjp", CalculateType.CI95, "IgG4", 23.0, 43.0),
+
+                    new ValueRanges(37, 48, "tjp", CalculateType.GEOMETRIC, "IgG4", 516.0, 1008.0),
+                    new ValueRanges(37, 48, "tjp", CalculateType.MINMAX, "IgG4", 4.0, 185.0),
+                    new ValueRanges(37, 48, "tjp", CalculateType.CI95, "IgG4", 27.0, 48.0),
+
+                    new ValueRanges(49, 72, "tjp", CalculateType.GEOMETRIC, "IgG4", 546.0, 964.0),
+                    new ValueRanges(49, 72, "tjp", CalculateType.MINMAX, "IgG4", 8.0, 227.0),
+                    new ValueRanges(49, 72, "tjp", CalculateType.CI95, "IgG4", 37.0, 62.0),
+
+                    new ValueRanges(7, 8, "tjp", CalculateType.GEOMETRIC, "IgG4", 525.0, 1087.0),
+                    new ValueRanges(7, 8, "tjp", CalculateType.MINMAX, "IgG4", 2.0, 198.0),
+                    new ValueRanges(7, 8, "tjp", CalculateType.CI95, "IgG4", 49.0, 72.0),
+
+                    new ValueRanges(9, 10, "tjp", CalculateType.GEOMETRIC, "IgG4", 531.0, 1189.0),
+                    new ValueRanges(9, 10, "tjp", CalculateType.MINMAX, "IgG4", 5.0, 202.0),
+                    new ValueRanges(9, 10, "tjp", CalculateType.CI95, "IgG4", 41.0, 63.0),
+
+                    new ValueRanges(11, 12, "tjp", CalculateType.GEOMETRIC, "IgG4", 601.0, 1083.0),
+                    new ValueRanges(11, 12, "tjp", CalculateType.MINMAX, "IgG4", 4.0, 160.0),
+                    new ValueRanges(11, 12, "tjp", CalculateType.CI95, "IgG4", 34.0, 64.0),
+
+                    new ValueRanges(13, 14, "tjp", CalculateType.GEOMETRIC, "IgG4", 518.0, 1226.0),
+                    new ValueRanges(13, 14, "tjp", CalculateType.MINMAX, "IgG4", 10.0, 144.0),
+                    new ValueRanges(13, 14, "tjp", CalculateType.CI95, "IgG4", 51.0, 84.0),
+
+                    new ValueRanges(15, 16, "tjp", CalculateType.GEOMETRIC, "IgG4", 527.0, 1065.0),
+                    new ValueRanges(15, 16, "tjp", CalculateType.MINMAX, "IgG4", 9.0, 187.0),
+                    new ValueRanges(15, 16, "tjp", CalculateType.CI95, "IgG4", 30.0, 72.0),
+
+                    new ValueRanges(17, Integer.MAX_VALUE, "tjp", CalculateType.GEOMETRIC, "IgG4", 643.0, 1071.0),
+                    new ValueRanges(17, Integer.MAX_VALUE, "tjp", CalculateType.MINMAX, "IgG4", 15.0, 202.0),
+                    new ValueRanges(17, Integer.MAX_VALUE, "tjp", CalculateType.CI95, "IgG4", 25.0, 66.0),
+
 
 
 
