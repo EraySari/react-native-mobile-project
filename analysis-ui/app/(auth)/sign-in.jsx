@@ -5,14 +5,16 @@ import { images } from "../../constants";
 import { useState } from "react";
 import FormBox from "../../components/FormBox";
 import CustomButton from "../../components/CustomButton";
-import { router } from "expo-router";
+import { Link, router } from "expo-router";
 const SignIn = () => {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleLogin = async function () {};
   return (
     <SafeAreaView className="h-full">
       <ScrollView>
-        <View className="justify-center w-full h-full px-4 py-16">
+        <View className="justify-center w-full min-h-[85vh] px-4 py-16">
           <Image source={images.rfCheck} className="w-[155px] h-[65px] mr-7" />
           <Text className="text-xl font-psemibold mt-7">Log in to RfCheck</Text>
           <FormBox
@@ -32,16 +34,14 @@ const SignIn = () => {
           <CustomButton
             title="Log In"
             containerStlyes="bg-teal-700 mt-10 mb-4"
+            handlePress={handleLogin}
           />
-          <Text>
-            Don't have an account?
-            <Text
-              className="font-psemibold text-blue-700"
-              onPress={() => router.push("/sign-up")}
-            >
-              Signup
-            </Text>
-          </Text>
+          <View className="flex-row justify-center gap-2">
+            <Text className="">Don`t have an account?</Text>
+            <Link href="/sign-up" className="font-psemibold text-blue-700 ">
+              Sign up
+            </Link>
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
