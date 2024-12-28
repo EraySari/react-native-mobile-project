@@ -37,6 +37,11 @@ public class ValueRangeServiceImpl implements ValueRangesService{
     }
 
     @Override
+    public List<String> getUniqueCalculateTypes() {
+        return valueRangesRepository.findDistinctCalculateTypes();
+    }
+
+    @Override
     public ValueRanges save(ValueRanges value) {
         return valueRangesRepository.save(value);
     }

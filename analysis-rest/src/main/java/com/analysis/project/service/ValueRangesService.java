@@ -16,6 +16,8 @@ public interface ValueRangesService {
 
     List<String> getUniqueGuideTypes();
 
+    List<String> getUniqueCalculateTypes();
+
     ValueRanges save(ValueRanges value);
 
     ValueRanges update(Long id,ValueRanges value);

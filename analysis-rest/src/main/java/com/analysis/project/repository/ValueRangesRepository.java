@@ -17,4 +17,7 @@ public interface ValueRangesRepository extends JpaRepository<ValueRanges, Long> 
     @Query("SELECT DISTINCT v.guideType FROM ValueRanges v")
     List<String> findDistinctGuideTypes();
 
+    @Query("SELECT DISTINCT v.calculateType FROM ValueRanges v")
+    List<String> findDistinctCalculateTypes();
+
 }

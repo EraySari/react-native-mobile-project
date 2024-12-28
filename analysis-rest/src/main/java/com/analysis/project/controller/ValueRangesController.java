@@ -45,6 +45,13 @@ public class ValueRangesController {
         return valueRangesService.getUniqueGuideTypes();
     }
 
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/calculateTypes")
+    public List<String> getUniqueCalculateTypes() {
+        return valueRangesService.getUniqueCalculateTypes();
+    }
+
     @PreAuthorize("hasAnyAuthority('ADMIN')")
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
