@@ -23,7 +23,8 @@ public class BloodAnalysisServiceImpl implements BloodAnalysisService {
 
     @Override
     public List<BloodAnalysis> findBloodAnalysisByUser(User user) {
-        return bloodAnalysisRepository.findBloodAnalysisByUser(user);
+        return bloodAnalysisRepository.findByUserOrderByDateDesc(user);
+
     }
 
     @Override

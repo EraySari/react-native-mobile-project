@@ -1,7 +1,6 @@
 package com.analysis.project.service;
 
-import com.analysis.project.model.BloodAnalysis;
-import com.analysis.project.model.User;
+
 import com.analysis.project.model.ValueRanges;
 
 import java.util.List;
@@ -14,6 +13,8 @@ public interface ValueRangesService {
     List<ValueRanges> findValueRangesByMonth(int month);
 
     Optional<ValueRanges> findByValueRangeId(Long id);
+
+    List<String> getUniqueGuideTypes();
 
     ValueRanges save(ValueRanges value);
 

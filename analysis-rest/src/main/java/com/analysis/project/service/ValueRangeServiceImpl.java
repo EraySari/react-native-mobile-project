@@ -31,6 +31,12 @@ public class ValueRangeServiceImpl implements ValueRangesService{
     }
 
     @Override
+    public List<String> getUniqueGuideTypes() {
+        return valueRangesRepository.findDistinctGuideTypes();
+
+    }
+
+    @Override
     public ValueRanges save(ValueRanges value) {
         return valueRangesRepository.save(value);
     }

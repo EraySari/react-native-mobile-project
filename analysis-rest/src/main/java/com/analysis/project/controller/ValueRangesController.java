@@ -38,6 +38,13 @@ public class ValueRangesController {
         return valueRangesService.findByValueRangeId(id);
     }
 
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/guideTypes")
+    public List<String> getUniqueGuideTypes() {
+        return valueRangesService.getUniqueGuideTypes();
+    }
+
     @PreAuthorize("hasAnyAuthority('ADMIN')")
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping

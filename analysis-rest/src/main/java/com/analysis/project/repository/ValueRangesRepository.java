@@ -13,4 +13,8 @@ public interface ValueRangesRepository extends JpaRepository<ValueRanges, Long> 
 
     @Query("SELECT v FROM ValueRanges v WHERE :month BETWEEN v.minMonth AND v.maxMonth")
     List<ValueRanges> findByMonthRange(@Param("month") int month);
+
+    @Query("SELECT DISTINCT v.guideType FROM ValueRanges v")
+    List<String> findDistinctGuideTypes();
+
 }
