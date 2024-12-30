@@ -1,12 +1,12 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-const Create = () => {
+const UserDataPage = ({ name }) => {
   return (
     <View>
-      <Text>Creatse</Text>
+      <Text>UserDataPage</Text>
     </View>
   );
 };
 
-export default Create;
+export default UserDataPage;

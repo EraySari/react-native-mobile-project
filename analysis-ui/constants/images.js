@@ -11,7 +11,6 @@ export default {
   thumbnail,
   cards,
   path,
-
   logoSmall,
   empty,
   rfCheck,

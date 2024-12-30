@@ -24,7 +24,7 @@ import java.util.Optional;
 @RequestMapping("/auth")
 public class AuthController {
 
-    public record AuthResponse(Long id, String name,String surname,Integer month,GenderType gender,String role) {
+    public record AuthResponse(Long id, String tc,String name,String surname,Integer month,GenderType gender,String role) {
     }
 
     private record LoginRequest(String tc, String password) {
@@ -42,7 +42,7 @@ public class AuthController {
         Optional<User> userOptional = Optional.ofNullable(userService.validTcAndPassword(loginRequest.tc, loginRequest.password).orElseThrow(() -> new RuntimeException("tc or password")));
         if (userOptional.isPresent()) {
             User user = userOptional.get();
-            return ResponseEntity.ok(new AuthResponse(user.getId(), user.getName(),user.getSurname(),user.getMonth(),user.getGender(), user.getRole().toString()));
+            return ResponseEntity.ok(new AuthResponse(user.getId(), user.getTc(), user.getName(),user.getSurname(),user.getMonth(),user.getGender(), user.getRole().toString()));
         }
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
     }
@@ -67,7 +67,7 @@ public class AuthController {
         }
 
         User user = userService.saveUser(createUser(signUpRequest));
-        return new AuthResponse(user.getId(), user.getName(),user.getSurname(),user.getMonth(),user.getGender(), user.getRole().toString());
+        return new AuthResponse(user.getId(),  user.getTc(),user.getName(),user.getSurname(),user.getMonth(),user.getGender(), user.getRole().toString());
     }
 
     private User createUser(SignUpRequest signUpRequest) {
