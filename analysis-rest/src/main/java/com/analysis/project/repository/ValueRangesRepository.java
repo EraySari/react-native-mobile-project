@@ -1,5 +1,6 @@
 package com.analysis.project.repository;
 
+import com.analysis.project.enums.CalculateType;
 import com.analysis.project.model.ValueRanges;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -19,5 +20,8 @@ public interface ValueRangesRepository extends JpaRepository<ValueRanges, Long> 
 
     @Query("SELECT DISTINCT v.calculateType FROM ValueRanges v")
     List<String> findDistinctCalculateTypes();
+
+    @Query("SELECT DISTINCT vr.calculateType FROM ValueRanges vr WHERE vr.guideType = :guideType")
+    List<CalculateType> findDistinctCalculateTypesByGuideType(String guideType);
 
 }

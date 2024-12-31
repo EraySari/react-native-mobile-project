@@ -1,6 +1,7 @@
 package com.analysis.project.service;
 
 
+import com.analysis.project.enums.CalculateType;
 import com.analysis.project.model.ValueRanges;
 
 import java.util.List;
@@ -23,4 +24,6 @@ public interface ValueRangesService {
     ValueRanges update(Long id,ValueRanges value);
 
     void delete(Long id);
+
+    public List<CalculateType> getDistinctCalculateTypesByGuideType(String guideType);
 }

@@ -1,5 +1,6 @@
 package com.analysis.project.service;
 
+import com.analysis.project.enums.CalculateType;
 import com.analysis.project.handler.ValueRangeNotFoundException;
 import com.analysis.project.model.ValueRanges;
 import com.analysis.project.repository.ValueRangesRepository;
@@ -70,5 +71,10 @@ public class ValueRangeServiceImpl implements ValueRangesService{
             throw new ValueRangeNotFoundException("Not Found Value Range");
         }
         valueRangesRepository.deleteById(id);
+    }
+
+    @Override
+    public List<CalculateType> getDistinctCalculateTypesByGuideType(String guideType) {
+        return valueRangesRepository.findDistinctCalculateTypesByGuideType(guideType);
     }
 }

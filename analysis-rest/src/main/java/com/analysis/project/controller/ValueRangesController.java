@@ -1,5 +1,6 @@
 package com.analysis.project.controller;
 
+import com.analysis.project.enums.CalculateType;
 import com.analysis.project.model.ValueRanges;
 import com.analysis.project.service.ValueRangesService;
 import lombok.RequiredArgsConstructor;
@@ -50,6 +51,13 @@ public class ValueRangesController {
     @GetMapping("/calculateTypes")
     public List<String> getUniqueCalculateTypes() {
         return valueRangesService.getUniqueCalculateTypes();
+    }
+
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/distinct-calculate-types")
+    public List<CalculateType> getDistinctCalculateTypes(@RequestParam String guideType) {
+        return valueRangesService.getDistinctCalculateTypesByGuideType(guideType);
     }
 
     @PreAuthorize("hasAnyAuthority('ADMIN')")
