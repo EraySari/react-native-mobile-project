@@ -7,7 +7,10 @@ const Results = () => {
   return (
     <SafeAreaView className="h-full">
       <ScrollView className="flex-1 p-10">
-        <View className="min-h-[70vh] w-full justify-center">
+        <View className="w-full justify-center">
+          <Text className="font-pbold text-2xl mb-1 text-center">
+            My Results
+          </Text>
           <Table column={[1, 1, 1, 1, 1]}>
             <Table.Header>
               <View>Deneme</View>

@@ -69,22 +69,22 @@ const TabsLayout = () => {
           }}
         />
 
-        <Tabs.Screen
-          name="results"
-          options={{ title: "My Results", headerShown: false }}
-        />
-
         {user.role === "ADMIN" ? (
           <Tabs.Screen
-            name="allUsers"
-            options={{ title: "All users", headerShown: false }}
+            name="create"
+            options={{ title: "Search", headerShown: false }}
           />
         ) : (
           <Tabs.Screen
-            name="create"
-            options={{ title: "Create", headerShown: false }}
+            name="results"
+            options={{ title: "My Results", headerShown: false }}
           />
         )}
+
+        <Tabs.Screen
+          name="allusers"
+          options={{ title: "All users", headerShown: false }}
+        />
 
         <Tabs.Screen
           name="profile"

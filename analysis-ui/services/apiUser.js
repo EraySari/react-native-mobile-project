@@ -1,3 +1,5 @@
+import { Alert } from "react-native";
+
 export async function getMe(user) {
   console.log("getMe: ", user);
   console.log(`Basic ${user.basicAuth}`);
@@ -59,22 +61,21 @@ export async function getAllUsers(user) {
   return allUsers;
 }
 
-export async function deleteUser(user) {
-  console.log("deleteeeee: ", user);
-  const res = await fetch("http://10.0.2.2:7071/api/users", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Basic ${user.basicAuth}`,
-    },
-  });
+export async function deleteUser(deleteUserData) {
+  console.log("deleteeeee: ", deleteUserData);
+  Alert.alert(`Basic ${deleteUserData.authdata}`);
+  const res = await fetch(
+    `http://10.0.2.2:7071/api/users/${deleteUserData.tc}`,
+    {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Basic ${deleteUserData.authdata}`,
+      },
+    }
+  );
 
   if (!res.ok) {
     throw new Error(`${res.status} - ${res.statusText}`);
   }
-
-  const allUsers = await res.json();
-  console.log(allUsers);
-
-  return allUsers;
 }

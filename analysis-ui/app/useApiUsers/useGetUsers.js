@@ -6,6 +6,7 @@ import { getAllUsers } from "../../services/apiUser";
 const useGetUsers = (user) => {
   const { data, isPending } = useQuery({
     queryFn: () => getAllUsers(user),
+    queryKey: ["users"],
 
     enabled: !!user,
   });

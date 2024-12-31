@@ -7,6 +7,7 @@ import toast from "../../utils/toast";
 const useUserUpdate = () => {
   const { mutate: updateMutate, isPending } = useMutation({
     mutationFn: (user) => updateUser(user),
+    mutationKey: ["users"],
 
     onSuccess: () => {
       console.log("update succes");

@@ -13,6 +13,7 @@ export default function AuthProvider({ children }) {
     const first = await AsyncStorage.getItem("user");
     const parseData = JSON.parse(first);
 
+    console.log("zzzzzzzzzzzzzzzzzzzzzzzzz", parseData);
     return parseData;
   }
 

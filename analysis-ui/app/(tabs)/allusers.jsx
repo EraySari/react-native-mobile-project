@@ -3,12 +3,11 @@ import React, { useEffect, useState } from "react";
 import useGetUsers from "../useApiUsers/useGetUsers";
 import { useAuth } from "../../context/authContext";
 import Table from "../../components/Table";
-import TableRow from "../../components/TableRow";
+import UserRow from "../../components/UserRow";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const AllUsers = () => {
   const [user, setUser] = useState(null);
-  const [allUsers, setAllUsers] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const { getUser } = useAuth();
@@ -29,12 +28,6 @@ const AllUsers = () => {
 
     fetchUser();
   }, []);
-
-  useEffect(() => {
-    if (!loading && user) {
-      console.log(user);
-    }
-  }, [user, loading]);
 
   const { data, isPending } = useGetUsers(user);
 
@@ -70,12 +63,12 @@ const AllUsers = () => {
                 <Text>Birth</Text>
               </View>
               <View>
-                <Text>Mail</Text>
+                <Text>Gender</Text>
               </View>
             </Table.Header>
             <Table.Body>
               {data.map((users) => (
-                <TableRow users={users} />
+                <UserRow users={users} authdata={user.basicAuth} />
               ))}
             </Table.Body>
           </Table>
