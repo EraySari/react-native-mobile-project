@@ -75,21 +75,25 @@ const Create = () => {
       surname: surname,
     };
     searchMutate(dataPacket, { onSuccess: (data) => setResult(data) });
-    // guideMutate(user, {
-    //   onSuccess: (data) => {
-    //     setAllTypes(data);
-    //   },
-    // });
-    // findMonthMutate(
-    //   { ...user, month: result[0].user?.month },
-    //   {
-    //     onSuccess: (data) => {
-    //       setValueByMonth(data);
-    //       const guide = groupedDatabyGuideType(data);
-    //       setByGuideType(guide);
-    //     },
-    //   }
-    // );
+    console.log("++++++++++++++++++++++fgfghfgh+", {
+      ...user,
+      month: result[0].user?.month,
+    });
+    guideMutate(user, {
+      onSuccess: (data) => {
+        setAllTypes(data);
+      },
+    });
+    findMonthMutate(
+      { ...user, month: result[0].user?.month },
+      {
+        onSuccess: (data) => {
+          setValueByMonth(data);
+          const guide = groupedDatabyGuideType(data);
+          setByGuideType(guide);
+        },
+      }
+    );
   };
 
   if (loading) {

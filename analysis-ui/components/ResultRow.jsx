@@ -10,9 +10,10 @@ import React, { useState } from "react";
 import ShowInfos from "./ShowInfos";
 import { formatDate } from "../app/helpers/formatDate";
 
-const ResultRow = ({ refData, guideType }) => {
+const ResultRow = ({ refData, guideData }) => {
   const [showInfo, setShowInfo] = useState(false);
-  const results = prepareData(userValues, guideData);
+
+  console.log("qqqqqqqqqqqqqqqqqqqqqqqqqqqq", guideData);
 
   const userValues = {
     igA: refData.igA,
@@ -25,14 +26,14 @@ const ResultRow = ({ refData, guideType }) => {
   };
 
   // Karşılaştırma fonksiyonu
-  const compareValues = (value, minValue, maxValue) => {
+  function compareValues(value, minValue, maxValue) {
     if (value < minValue) return "Düşük";
     if (value > maxValue) return "Yüksek";
     return "Aralıkta";
-  };
+  }
 
   // Tabloda gösterilecek veriyi hazırlama
-  const prepareData = (userValues, guideType) => {
+  function prepareData(userValues, guideData) {
     const result = {};
     for (const category in userValues) {
       const categoryName = category.toUpperCase();
@@ -55,14 +56,18 @@ const ResultRow = ({ refData, guideType }) => {
       }
     }
     return result;
-  };
+  }
+
+  const results = prepareData(userValues, guideData);
 
   const Table = ({ results }) => {
     return (
       <View>
         {Object.keys(results).map((category) => (
           <View key={category} style={styles.categoryContainer}>
-            <Text style={styles.categoryTitle}>{category}</Text>
+            <Text style={styles.categoryTitle}>
+              {category} ({userValues[category]})
+            </Text>
             {results[category].map((item, index) => (
               <View key={index} style={styles.row}>
                 <Text style={styles.cell}>{item.guideType}</Text>
@@ -122,5 +127,6 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
   },
+  categoryTitle: {},
 });
 export default ResultRow;
