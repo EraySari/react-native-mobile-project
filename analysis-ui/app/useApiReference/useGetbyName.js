@@ -5,7 +5,7 @@ import { Alert } from "react-native";
 const useGetbyName = () => {
   const { mutate: searchMutate, isPending: isSearching } = useMutation({
     mutationFn: (data) => getReferenceByName(data),
-    mutationKey: ["references"],
+    mutationKey: ["values"],
 
     onError: (err) => {
       Alert.alert(err.message);

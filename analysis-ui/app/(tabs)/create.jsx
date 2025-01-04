@@ -24,7 +24,7 @@ const Create = () => {
 
   const { getUser } = useAuth();
 
-  const [user, setUser] = useState(null); // localden gelen admin verileri buna kaydediliyor
+  const [admin, setAdmin] = useState(null); // localden gelen admin verileri buna kaydediliyor
 
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
@@ -32,6 +32,7 @@ const Create = () => {
   const [allTypes, setAllTypes] = useState([]);
   const [valueByMonth, setValueByMonth] = useState([]);
   const [byGuideType, setByGuideType] = useState([]);
+  const [userData, setUserData] = useState([]);
 
   const { searchMutate, isSearching } = useGetbyName();
 
@@ -45,7 +46,7 @@ const Create = () => {
       try {
         setLoading(true);
         const jsonData = await getUser();
-        setUser(jsonData);
+        setAdmin(jsonData);
       } catch (error) {
         console.error("error");
       } finally {
@@ -68,26 +69,28 @@ const Create = () => {
   }
 
   const handleSave = () => {
-    console.log("++++++++++++++++++++++fgfghfgh+", result);
     const dataPacket = {
-      basicAuth: user.basicAuth,
+      basicAuth: admin?.basicAuth,
       name: name,
       surname: surname,
     };
-    searchMutate(dataPacket, { onSuccess: (data) => setResult(data) });
-    console.log("++++++++++++++++++++++fgfghfgh+", {
-      ...user,
-      month: result[0].user?.month,
+
+    searchMutate(dataPacket, {
+      onSuccess: (data) => {
+        setResult(data);
+        setUserData(result[0]?.user);
+      },
     });
-    guideMutate(user, {
+    guideMutate(admin, {
       onSuccess: (data) => {
         setAllTypes(data);
       },
     });
     findMonthMutate(
-      { ...user, month: result[0].user?.month },
+      { ...admin, month: result[0].user?.month },
       {
         onSuccess: (data) => {
+          console.log("qqqqqqqqqqqq", data);
           setValueByMonth(data);
           const guide = groupedDatabyGuideType(data);
           setByGuideType(guide);
@@ -104,6 +107,7 @@ const Create = () => {
     );
   }
 
+  console.log("---------------", byGuideType);
   return (
     <SafeAreaView className="h-full">
       <ScrollView className="flex-1 p-10">
@@ -140,7 +144,14 @@ const Create = () => {
           <Table column={[1, 1, 1, 1, 1, 1, 1, 1]}>
             <Table.Body>
               {result?.map((ref) => {
-                return <ResultRow refData={ref} guideData={byGuideType} />;
+                return (
+                  <ResultRow
+                    refData={ref}
+                    guideData={byGuideType}
+                    userID={userData?.id}
+                    admin={admin}
+                  />
+                );
               })}
             </Table.Body>
           </Table>

@@ -1,19 +1,14 @@
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Alert,
-  StyleSheet,
-  FlatList,
-} from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import React, { useState } from "react";
-import ShowInfos from "./ShowInfos";
 import { formatDate } from "../app/helpers/formatDate";
+import ResultTablo from "./ResultTablo";
+import prepareData from "../app/helpers/prepareData";
+import CustomButton from "./CustomButton";
+import AddRefForm from "./AddRefForm";
 
-const ResultRow = ({ refData, guideData }) => {
+const ResultRow = ({ refData, guideData, userID, admin }) => {
   const [showInfo, setShowInfo] = useState(false);
-
-  console.log("qqqqqqqqqqqqqqqqqqqqqqqqqqqq", guideData);
+  const [showEditInput, setShowEditInput] = useState(false);
 
   const userValues = {
     igA: refData.igA,
@@ -25,72 +20,47 @@ const ResultRow = ({ refData, guideData }) => {
     igM: refData.igM,
   };
 
-  // Karşılaştırma fonksiyonu
-  function compareValues(value, minValue, maxValue) {
-    if (value < minValue) return "Düşük";
-    if (value > maxValue) return "Yüksek";
-    return "Aralıkta";
-  }
-
-  // Tabloda gösterilecek veriyi hazırlama
-  function prepareData(userValues, guideData) {
-    const result = {};
-    for (const category in userValues) {
-      const categoryName = category.toUpperCase();
-      result[category] = [];
-
-      for (const guideType in guideData) {
-        guideData[guideType].forEach((item) => {
-          if (item.valueName.toUpperCase() === categoryName) {
-            result[category].push({
-              guideType,
-              calculateType: item.calculateType,
-              status: compareValues(
-                userValues[category],
-                item.minValue,
-                item.maxValue
-              ),
-            });
-          }
-        });
-      }
-    }
-    return result;
-  }
-
   const results = prepareData(userValues, guideData);
-
-  const Table = ({ results }) => {
-    return (
-      <View>
-        {Object.keys(results).map((category) => (
-          <View key={category} style={styles.categoryContainer}>
-            <Text style={styles.categoryTitle}>
-              {category} ({userValues[category]})
-            </Text>
-            {results[category].map((item, index) => (
-              <View key={index} style={styles.row}>
-                <Text style={styles.cell}>{item.guideType}</Text>
-                <Text style={styles.cell}>{item.calculateType}</Text>
-                <Text style={styles.cell}>{item.status}</Text>
-              </View>
-            ))}
-          </View>
-        ))}
-      </View>
-    );
-  };
 
   return (
     <>
-      <TouchableOpacity onPress={() => setShowInfo(!showInfo)}>
+      <TouchableOpacity
+        onPress={() => {
+          setShowInfo(!showInfo);
+          {
+            showEditInput && setShowEditInput(!showEditInput);
+          }
+        }}
+      >
         <View className="py-4 border border-gray-300 ">
-          <Text className="text-center">{formatDate(refData.date)}</Text>
+          <Text className="text-center mb-4">{formatDate(refData.date)}</Text>
+
+          <View className="items-center">
+            {showInfo && (
+              <CustomButton
+                title="Edit"
+                containerStlyes="bg-blue-700 min-h-[35px] w-20"
+                textStyles="font-plight text-sm "
+                handlePress={() => setShowEditInput(!showEditInput)}
+              />
+            )}
+          </View>
         </View>
       </TouchableOpacity>
-      {showInfo && (
+
+      {showEditInput && (
+        <AddRefForm
+          user={userID}
+          admin={admin}
+          editValue={userValues}
+          setShowEditInput={setShowEditInput}
+          refData={refData.id}
+        />
+      )}
+
+      {showInfo && !showEditInput && (
         <View style={styles.container}>
-          <Table results={results} />
+          <ResultTablo results={results} userValues={userValues} />
         </View>
       )}
     </>
@@ -127,6 +97,5 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
   },
-  categoryTitle: {},
 });
 export default ResultRow;

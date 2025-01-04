@@ -1,5 +1,4 @@
 export async function getGuideType(data) {
-  console.log("bbbbbbbbbbbbbb,", data);
   const res = await fetch(`http://10.0.2.2:7071/api/values/guideTypes`, {
     method: "GET",
     headers: {
@@ -18,8 +17,7 @@ export async function getGuideType(data) {
 }
 
 export async function findByMonth(data) {
-  console.log("geeeeeeeeeeeeeeeeee,", data);
-  //datada hem admin hem month gelecek
+  console.log("888888888888888888888888", data);
   const res = await fetch(
     `http://10.0.2.2:7071/api/values/month/${data.month}`,
     {
@@ -37,9 +35,6 @@ export async function findByMonth(data) {
 
   const results = await res.json();
 
+  console.log("9999999999999999999", results);
   return results;
 }
-
-// ilk olarak guideType cek. Örnegin elimde 5 type var 5 farkli karsilastirma olacak
-// find with month ile veriyi cek. Her birinin guide typeina bak ve kendi kategorisine ekleyip tabloda göster
-// daha sonra herbirinin calculateTypelere bak, sonra ona göre veriyi yukari mi asagi mi sorgula

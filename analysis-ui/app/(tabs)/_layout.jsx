@@ -4,15 +4,7 @@ import { Tabs } from "expo-router";
 import { icons } from "../../constants";
 import { StatusBar } from "expo-status-bar";
 import { useAuth } from "../../context/authContext";
-
-const TabIcon = ({ icon, color, name }) => {
-  return (
-    <View>
-      <Image source={icon} tintColor={color} className="w-6 h-6" />
-      <Text>{name}</Text>
-    </View>
-  );
-};
+import Icon from "react-native-vector-icons/Ionicons";
 
 const TabsLayout = () => {
   const [loading, setLoading] = useState(true);
@@ -47,7 +39,7 @@ const TabsLayout = () => {
     <>
       <Tabs
         screenOptions={{
-          tabBarActiveTintColor: "#FFA001",
+          tabBarActiveTintColor: "#01a171",
           tabBarInactiveTintColor: "#CDCDE0",
           tabBarShowLabel: true,
           tabBarStyle: {
@@ -63,32 +55,100 @@ const TabsLayout = () => {
           options={{
             title: "Home",
             headerShown: false,
-            tadBarIcon: ({ color, focused }) => {
-              <TabIcon icon={icons.home} color={color} name="Home" />;
+            tabBarIcon: ({ color, focused }) => {
+              return <Icon name="home" size={24} color={color} />;
             },
           }}
         />
 
-        {user.role === "ADMIN" ? (
+        {user?.role === "ADMIN" ? (
           <Tabs.Screen
             name="create"
-            options={{ title: "Search", headerShown: false }}
+            options={{
+              title: "User Results",
+              headerShown: false,
+              tabBarIcon: ({ color, focused }) => {
+                return (
+                  <Icon
+                    name={focused ? "stats-chart" : "stats-chart-outline"}
+                    size={24}
+                    color={color}
+                  />
+                );
+              },
+            }}
           />
-        ) : (
+        ) : user?.role ? (
           <Tabs.Screen
             name="results"
-            options={{ title: "My Results", headerShown: false }}
+            options={{
+              title: "My Results",
+              headerShown: false,
+              tabBarIcon: ({ color, focused }) => {
+                return (
+                  <Icon
+                    name={focused ? "stats-chart" : "stats-chart-outline"}
+                    size={24}
+                    color={color}
+                  />
+                );
+              },
+            }}
           />
-        )}
+        ) : null}
 
-        <Tabs.Screen
-          name="allusers"
-          options={{ title: "All users", headerShown: false }}
-        />
+        {user?.role === "ADMIN" ? (
+          <Tabs.Screen
+            name="allusers"
+            options={{
+              title: "All users",
+              headerShown: false,
+              tabBarIcon: ({ color, focused }) => {
+                return (
+                  <Icon
+                    name={focused ? "people" : "people-outline"}
+                    size={24}
+                    color={color}
+                  />
+                );
+              },
+            }}
+          />
+        ) : null}
 
+        {user?.role === "ADMIN" ? (
+          <Tabs.Screen
+            name="results"
+            options={{
+              title: "Search",
+              headerShown: false,
+              tabBarIcon: ({ color, focused }) => {
+                return (
+                  <Icon
+                    name={focused ? "search" : "search-outline"}
+                    size={24}
+                    color={color}
+                  />
+                );
+              },
+            }}
+          />
+        ) : null}
         <Tabs.Screen
           name="profile"
-          options={{ title: "Profile", headerShown: false }}
+          options={{
+            title: "Profile",
+            headerShown: false,
+            tabBarIcon: ({ color, focused }) => {
+              return (
+                <Icon
+                  name={focused ? "person" : "person-outline"}
+                  size={24}
+                  color={color}
+                />
+              );
+            },
+          }}
         />
       </Tabs>
 

@@ -12,12 +12,6 @@ const App = () => {
     <SafeAreaView className=" h-full">
       <ScrollView contentContainerStyle={{ height: "100%" }}>
         <View className="w-full justify-center items-center min-h-[85vh] px-4">
-          <CustomButton
-            title="Continue with National ID Number"
-            handlePress={() => router.push("/sign-in")}
-            containerStlyes="w-full mt-14"
-          />
-
           <Image
             source={images.rfCheck}
             className="w-[350px] h-[250px] mr-14"
@@ -26,6 +20,12 @@ const App = () => {
           <Text className="font-plight text-sm">
             Check your tejkst results easily
           </Text>
+
+          <CustomButton
+            title="Continue with National ID Number"
+            handlePress={() => router.push("/sign-in")}
+            containerStlyes="w-full mt-14"
+          />
         </View>
       </ScrollView>
     </SafeAreaView>

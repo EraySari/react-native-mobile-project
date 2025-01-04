@@ -4,7 +4,6 @@ import Table from "./Table";
 import ShowInfos from "./ShowInfos";
 
 const UserRow = ({ users, authdata }) => {
-  console.log("ttttttttttttttttttttttt", users);
   const [showInfo, setShowInfo] = useState(false);
 
   return (
