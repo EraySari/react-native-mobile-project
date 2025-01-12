@@ -1,9 +1,7 @@
 import { StyleSheet, Text, View, ScrollView } from "react-native";
 import React from "react";
-import { Redirect, router } from "expo-router";
-import { StatusBar } from "expo-status-bar";
+import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { images } from "../constants";
 import { Image } from "react-native";
 import CustomButton from "../components/CustomButton";
 
@@ -13,12 +11,12 @@ const App = () => {
       <ScrollView contentContainerStyle={{ height: "100%" }}>
         <View className="w-full justify-center items-center min-h-[85vh] px-4">
           <Image
-            source={images.rfCheck}
+            source={require("../assets/images/rfcheck.png")}
             className="w-[350px] h-[250px] mr-14"
             resizeMode="contain"
           />
           <Text className="font-plight text-sm">
-            Check your tejkst results easily
+            Check your test results easily
           </Text>
 
           <CustomButton
@@ -33,10 +31,3 @@ const App = () => {
 };
 
 export default App;
-
-{
-  /* <Text className="text-3xl font-pblack">RefCheck</Text>
-<StatusBar style="auto" />
-<Link href="/home">Go to home</Link>{" "}
-burdan home'a yolluyoruz. Sonra home kendi _layout düzenini kullaniyor */
-}

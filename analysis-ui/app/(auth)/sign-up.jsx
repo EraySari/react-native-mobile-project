@@ -1,7 +1,6 @@
 import { View, Text, ScrollView, Image, Alert } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { images } from "../../constants";
 import { useState } from "react";
 import FormBox from "../../components/FormBox";
 import CustomButton from "../../components/CustomButton";
@@ -25,7 +24,10 @@ const SignUp = () => {
     <SafeAreaView className="h-full">
       <ScrollView>
         <View className="justify-center w-full h-full px-4 py-16">
-          <Image source={images.rfCheck} className="w-[155px] h-[65px] mr-7" />
+          <Image
+            source={require("../../assets/images/rfcheck.png")}
+            className="w-[155px] h-[65px] mr-7"
+          />
           <Text className="text-xl font-psemibold mt-7">Log in to RfCheck</Text>
           <FormBox
             title="Name"

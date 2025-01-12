@@ -16,7 +16,6 @@ const AddRefForm = ({
 
   const updateDate = new Date();
 
-  console.log(updateDate);
   const [formData, setFormData] = useState({
     igG: editValue ? editValue.igG : "",
     igA: editValue ? editValue.igA : "",
@@ -30,8 +29,6 @@ const AddRefForm = ({
   function handleInputChange(ig, value) {
     setFormData({ ...formData, [ig]: value });
   }
-
-  console.log("user");
 
   function handleSave() {
     {

@@ -24,8 +24,6 @@ const Profile = () => {
 
   const [user, setUser] = useState(null); // localden gelen veri buna kaydediliyor
 
-  // const user1 = getMeMutate(); // l
-
   useEffect(() => {
     // localden user aliniyor
     const fetchUser = async () => {
@@ -43,16 +41,11 @@ const Profile = () => {
     fetchUser();
   }, []);
 
-  if (!loading) {
-    console.log("profile ici: ", user);
-  }
   const handleInputChange = (field, value) => {
     setUser({ ...user, [field]: value });
   };
 
   const handleSave = () => {
-    // Güncellemeleri kontrol et
-    console.log("guncellenmis user:", user);
     updateMutate(user);
   };
 
@@ -78,7 +71,7 @@ const Profile = () => {
             value={user.name}
             onChangeText={(text) => handleInputChange("name", text)}
           />
-          {/* Soyad */}
+
           <CustomLabel>Surname</CustomLabel>
           <TextInput
             style={styles.input}
@@ -99,7 +92,6 @@ const Profile = () => {
             onChangeText={(text) => handleInputChange("gender", text)}
           />
 
-          {/* Kaydet Butonu */}
           <View style={styles.buttonContainer}>
             <CustomButton
               title="Update"
@@ -129,5 +121,3 @@ const styles = StyleSheet.create({
 });
 
 export default Profile;
-
-//getMe kullanma guncellerken. Localden aldigin veri yukarda var güncellenmis hali onun kullan. Yeni bir useUpdate kullan onu kullan direkt yukardakini yolla

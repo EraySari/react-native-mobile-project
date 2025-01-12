@@ -1,5 +1,3 @@
-import { Alert } from "react-native";
-
 export async function getReferenceByName(data) {
   const res = await fetch(
     `http://10.0.2.2:7071/api/analysis/user/${data.name}/${data.surname}/analysis`,

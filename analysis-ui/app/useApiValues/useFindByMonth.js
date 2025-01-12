@@ -4,11 +4,11 @@ import toast from "../../utils/toast";
 import { findByMonth } from "../../services/apiValues";
 
 const useFindByMonth = () => {
-  const { mutate: findMonthMutate, isPending: isFetcing } = useMutation({
+  const { mutate: findMonthMutate, isPending: isFetching } = useMutation({
     mutationFn: (user) => findByMonth(user),
     mutationKey: ["valuesByMonths"],
   });
-  return { findMonthMutate, isFetcing };
+  return { findMonthMutate, isFetching };
 };
 
 export default useFindByMonth;

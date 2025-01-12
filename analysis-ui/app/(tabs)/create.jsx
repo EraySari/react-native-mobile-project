@@ -90,7 +90,6 @@ const Create = () => {
       { ...admin, month: result[0].user?.month },
       {
         onSuccess: (data) => {
-          console.log("qqqqqqqqqqqq", data);
           setValueByMonth(data);
           const guide = groupedDatabyGuideType(data);
           setByGuideType(guide);
@@ -107,7 +106,6 @@ const Create = () => {
     );
   }
 
-  console.log("---------------", byGuideType);
   return (
     <SafeAreaView className="h-full">
       <ScrollView className="flex-1 p-10">
@@ -122,7 +120,7 @@ const Create = () => {
             value={name}
             onChangeText={(text) => setName(text)}
           />
-          {/* Soyad */}
+
           <CustomLabel>Surname</CustomLabel>
           <TextInput
             style={styles.input}
@@ -130,7 +128,6 @@ const Create = () => {
             onChangeText={(text) => setSurname(text)}
           />
 
-          {/* Kaydet Butonu */}
           <View style={styles.buttonContainer}>
             <CustomButton
               title="Search"
@@ -178,5 +175,3 @@ const styles = StyleSheet.create({
 });
 
 export default Create;
-
-//getMe kullanma guncellerken. Localden aldigin veri yukarda var güncellenmis hali onun kullan. Yeni bir useUpdate kullan onu kullan direkt yukardakini yolla

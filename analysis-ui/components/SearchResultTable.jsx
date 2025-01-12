@@ -1,110 +1,159 @@
 import { View, Text, ScrollView, StyleSheet } from "react-native";
 import React from "react";
 import prepareData from "../app/helpers/prepareData";
+import groupByValueName from "../app/helpers/groupByValueName";
+import calculateAgeMonth from "../app/helpers/calculateAgeMonth";
 
 const SearchResultTable = ({ formData, byGuide }) => {
   const results = prepareData(formData, byGuide);
   const { birthDate, ...newResults } = results;
 
-  const guideTypes = newResults["igA"].map((item) => item.guideType);
+  const groupedData = groupByValueName(byGuide);
+
+  const tableHeaders = ["GEOMETRIC", "MINMAX", "MEAN", "CI95"];
+
+  const organizedResults = {};
+  Object.entries(newResults).forEach(([key, dataList]) => {
+    dataList.forEach((data) => {
+      const guide = data.guideType;
+
+      if (!organizedResults[guide]) {
+        organizedResults[guide] = {};
+      }
+      if (!organizedResults[guide][data.calculateType]) {
+        organizedResults[guide][data.calculateType] = [];
+      }
+      organizedResults[guide][data.calculateType].push({ ...data, type: key });
+    });
+  });
 
   return (
-    <ScrollView horizontal>
-      <View style={styles.tableContainer}>
-        <Text style={styles.tableHeader}>Results Table</Text>
-        <View style={styles.container}>
-          <View style={styles.tableRow}>
-            {Object.keys(newResults).map((category) => (
-              <Text key={category} style={styles.tableCellHeader}>
-                {category} ({formData[category] || "-"})
+    <ScrollView style={styles.container}>
+      {Object.entries(organizedResults).map(
+        ([guideType, value], guideIndex) => (
+          <View key={guideIndex} style={styles.guideContainer}>
+            <View style={styles.table}>
+              <Text style={styles.headerText}>
+                {guideType} | Aralik {value.CI95[0].minMonth}-{" "}
+                {value.CI95[0].maxMonth}
+                {` (${calculateAgeMonth(formData.birthDate)})`}
               </Text>
-            ))}
-          </View>
+              <View style={styles.row}>
+                <Text style={[styles.cell, styles.bold]}></Text>
+                {tableHeaders.map((header, index) => (
+                  <Text key={index} style={[styles.cell, styles.bold]}>
+                    {header}
+                  </Text>
+                ))}
+              </View>
 
-          {guideTypes.map((guideType, index) => (
-            <View key={index} style={styles.tableRow}>
-              {Object.keys(newResults).map((category) => {
-                const metric = newResults[category][index];
-                return (
-                  <View
-                    key={`${category}-${index}`}
-                    style={styles.tableCell}
-                    className={`${
-                      formData[category] > metric?.maxValue
-                        ? "bg-red-400"
-                        : formData[category] < metric?.minValue
-                        ? "bg-blue-200"
-                        : "bg-green-200"
-                    }`}
-                  >
-                    <View className="flex-col py-1">
-                      <Text className="text-center">
-                        {guideType}-{metric?.calculateType || "-"}
+              {["IgA", "IgG", "IgM", "IgG1", "IgG2", "IgG3", "IgG4"].map(
+                (igType, rowIndex) => {
+                  const igData = groupedData?.[guideType]?.[igType] || [];
+
+                  return (
+                    <View key={rowIndex} style={styles.row}>
+                      <Text style={styles.cell}>
+                        {igType} ({formData?.[igType] || "-"})
                       </Text>
-                      <Text className="text-center">
-                        ({metric?.minValue || "N/A"}-{metric?.maxValue || "N/A"}
-                        )
-                      </Text>
-                      <Text className="text-center">
-                        {category}({formData[category]})
-                      </Text>
+                      {tableHeaders.map((calcType) => {
+                        const igValue = igData.find(
+                          (item) => item.calculateType === calcType
+                        );
+                        return (
+                          <Text
+                            style={styles.cell}
+                            className={
+                              igValue
+                                ? formData?.[igType] < igValue.minValue
+                                  ? "bg-blue-200"
+                                  : formData?.[igType] > igValue.maxValue
+                                  ? "bg-red-200"
+                                  : "bg-green-300"
+                                : "bg-slate-50"
+                            }
+                          >
+                            <Text className="text-xs font-pextrabold">
+                              {igValue &&
+                                formData?.[igType] < igValue.minValue &&
+                                "⬇ "}
+                            </Text>
+                            {igValue
+                              ? `${igValue.minValue}${
+                                  formData?.[igType] < igValue.minValue
+                                    ? " – "
+                                    : formData?.[igType] > igValue.maxValue
+                                    ? " – "
+                                    : "⇔"
+                                }${igValue.maxValue}`
+                              : "-"}
+
+                            <Text className="text-xs font-pextrabold">
+                              {igValue &&
+                                formData?.[igType] > igValue.maxValue &&
+                                " ⬆"}
+                            </Text>
+                          </Text>
+                        );
+                      })}
                     </View>
-                  </View>
-                );
-              })}
+                  );
+                }
+              )}
             </View>
-          ))}
-        </View>
-      </View>
+          </View>
+        )
+      )}
     </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
-  tableContainer: {
-    marginTop: 20,
-    marginBottom: 80,
-    borderWidth: 2,
-    borderColor: "#b4b2b2",
-    borderRadius: 10,
-    padding: 10,
-    minWidth: 750,
-  },
-  tableHeader: {
-    fontSize: 18,
-    fontWeight: "bold",
-    marginBottom: 10,
-    textAlign: "center",
-  },
-  tableRow: {
-    flexDirection: "row",
-    marginBottom: 5,
-    borderBottomWidth: 0.4,
-    borderBottomColor: "#ddd",
-  },
-  tableCell: {
+  container: {
     flex: 1,
+  },
+  headerText: {
     fontSize: 12,
-    textAlign: "center",
-    marginRight: 15,
-    paddingHorizontal: 5,
-    borderLeftWidth: 2,
-    borderRightWidth: 2,
-    minWidth: 170,
-  },
-  tableCellHeader: {
-    flex: 1,
-    fontSize: 14,
     fontWeight: "bold",
     textAlign: "center",
-    paddingHorizontal: 5,
+    marginBottom: 10,
   },
-  guideTypeHeader: {
-    textAlign: "left",
+  guideContainer: {
+    marginTop: 15,
   },
-  header: {
-    backgroundColor: "#f2f2f2",
+  guideTitle: {
+    fontSize: 16,
+    fontWeight: "bold",
+    textAlign: "center",
+    marginVertical: 8,
+  },
+  table: {
+    borderWidth: 1,
+    borderColor: "#8f8d8d",
+    marginBottom: 5,
+    padding: 5,
+    backgroundColor: "#dbdef3c7",
+  },
+  row: {
+    flexDirection: "row",
+    justifyContent: "space",
+    alignItems: "stretch",
+    borderBottomWidth: 2,
+    borderBottomColor: "#C1C1C1",
+    backgroundColor: "#eef0fa",
+  },
+  cell: {
+    flex: 1,
     paddingVertical: 5,
+    textAlign: "center",
+    fontSize: 8,
+    fontWeight: "800",
+    borderRightWidth: 2,
+    borderBottomColor: "#C1C1C1",
+  },
+  bold: {
+    fontWeight: "bold",
+    backgroundColor: "#DCDCDC",
   },
 });
 

@@ -1,7 +1,6 @@
-import { View, Text, Image } from "react-native";
+import { View, Text } from "react-native";
 import React, { useEffect, useState } from "react";
 import { Tabs } from "expo-router";
-import { icons } from "../../constants";
 import { StatusBar } from "expo-status-bar";
 import { useAuth } from "../../context/authContext";
 import Icon from "react-native-vector-icons/Ionicons";
@@ -51,51 +50,38 @@ const TabsLayout = () => {
         }}
       >
         <Tabs.Screen
-          name="home" //nested childrenlara bakar bu isme götürür
+          name="results"
           options={{
-            title: "Home",
+            title: "Search",
             headerShown: false,
             tabBarIcon: ({ color, focused }) => {
-              return <Icon name="home" size={24} color={color} />;
+              return (
+                <Icon
+                  name={focused ? "search" : "search-outline"}
+                  size={24}
+                  color={color}
+                />
+              );
             },
           }}
         />
 
-        {user?.role === "ADMIN" ? (
-          <Tabs.Screen
-            name="create"
-            options={{
-              title: "User Results",
-              headerShown: false,
-              tabBarIcon: ({ color, focused }) => {
-                return (
-                  <Icon
-                    name={focused ? "stats-chart" : "stats-chart-outline"}
-                    size={24}
-                    color={color}
-                  />
-                );
-              },
-            }}
-          />
-        ) : user?.role ? (
-          <Tabs.Screen
-            name="results"
-            options={{
-              title: "My Results",
-              headerShown: false,
-              tabBarIcon: ({ color, focused }) => {
-                return (
-                  <Icon
-                    name={focused ? "stats-chart" : "stats-chart-outline"}
-                    size={24}
-                    color={color}
-                  />
-                );
-              },
-            }}
-          />
-        ) : null}
+        <Tabs.Screen
+          name="create"
+          options={{
+            title: "User Results",
+            headerShown: false,
+            tabBarIcon: ({ color, focused }) => {
+              return (
+                <Icon
+                  name={focused ? "stats-chart" : "stats-chart-outline"}
+                  size={24}
+                  color={color}
+                />
+              );
+            },
+          }}
+        />
 
         {user?.role === "ADMIN" ? (
           <Tabs.Screen
@@ -116,24 +102,6 @@ const TabsLayout = () => {
           />
         ) : null}
 
-        {user?.role === "ADMIN" ? (
-          <Tabs.Screen
-            name="results"
-            options={{
-              title: "Search",
-              headerShown: false,
-              tabBarIcon: ({ color, focused }) => {
-                return (
-                  <Icon
-                    name={focused ? "search" : "search-outline"}
-                    size={24}
-                    color={color}
-                  />
-                );
-              },
-            }}
-          />
-        ) : null}
         <Tabs.Screen
           name="profile"
           options={{

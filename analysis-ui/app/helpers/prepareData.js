@@ -3,7 +3,6 @@ import { Text } from "react-native";
 // Tabloda gösterilecek veriyi hazırlama
 export default function prepareData(userValues, guideData) {
   const result = {};
-  //console.log("iciicicicicic", userValues, guideData); // user aramada göstermeme hatasi burada guideData[]küme
 
   // Karşılaştırma fonksiyonu
   function compareValues(value, minValue, maxValue) {
@@ -25,6 +24,7 @@ export default function prepareData(userValues, guideData) {
             minValue: item.minValue,
             maxValue: item.maxValue,
             maxMonth: item.maxMonth,
+            minMonth: item.minMonth,
             status: compareValues(
               userValues[category],
               item.minValue,

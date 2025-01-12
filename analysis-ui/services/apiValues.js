@@ -17,14 +17,15 @@ export async function getGuideType(data) {
 }
 
 export async function findByMonth(data) {
-  console.log("888888888888888888888888", data);
   const res = await fetch(
     `http://10.0.2.2:7071/api/values/month/${data.month}`,
     {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Basic ${data.basicAuth}`,
+        Authorization: `Basic ${
+          data.basicAuth ? data.basicAuth : data.admin.basicAuth
+        }`,
       },
     }
   );
@@ -35,6 +36,5 @@ export async function findByMonth(data) {
 
   const results = await res.json();
 
-  console.log("9999999999999999999", results);
   return results;
 }

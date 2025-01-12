@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import Table from "./Table";
 import useDeleteUser from "../app/useApiUsers/useDeleteUser";
 import CustomButton from "./CustomButton";
-import { StyleSheet } from "react-native";
 import { useAuth } from "../context/authContext";
 import AddRefForm from "./AddRefForm";
 
@@ -76,7 +75,3 @@ const ShowInfos = ({ user, authdata }) => {
 };
 
 export default ShowInfos;
-
-// ilk olarak guideType cek. Örnegin elimde 5 type var 5 farkli karsilastirma olacak
-// find with month ile veriyi cek. Her birinin guide typeina bak ve kendi kategorisine ekleyip tabloda göster
-// daha sonra herbirinin calculateTypelere bak,  sonra ona göre veriyi yukari mi asagi mi sorgula

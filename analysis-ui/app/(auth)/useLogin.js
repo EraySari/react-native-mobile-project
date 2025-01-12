@@ -19,7 +19,7 @@ const useLogin = () => {
       userToLocal({ ...data, basicAuth });
 
       toast.success("Login Basarili");
-      router.replace("/home");
+      router.replace("/results");
     },
 
     onError: () => {},

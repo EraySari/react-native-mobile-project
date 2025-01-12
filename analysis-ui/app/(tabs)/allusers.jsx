@@ -31,7 +31,6 @@ const AllUsers = () => {
 
   const { data, isPending } = useGetUsers(user);
 
-  console.log(data);
   if (loading || isPending) {
     return (
       <View>
@@ -40,7 +39,6 @@ const AllUsers = () => {
     );
   }
 
-  console.log(data);
   return (
     <SafeAreaView className="h-full">
       <ScrollView className="flex-1 p-4">
@@ -68,7 +66,11 @@ const AllUsers = () => {
             </Table.Header>
             <Table.Body>
               {data.map((users) => (
-                <UserRow users={users} authdata={user.basicAuth} />
+                <UserRow
+                  key={users.basicAuth}
+                  users={users}
+                  authdata={user.basicAuth}
+                />
               ))}
             </Table.Body>
           </Table>
@@ -79,5 +81,3 @@ const AllUsers = () => {
 };
 
 export default AllUsers;
-
-//admin user silebilecek
